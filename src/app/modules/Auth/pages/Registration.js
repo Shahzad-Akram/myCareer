@@ -7,7 +7,9 @@ import { injectIntl } from 'react-intl';
 import * as auth from '../_redux/authRedux';
 import { register } from '../_redux/authCrud';
 
-import Logo from '../../../../assets/images/logos/logo.png';
+import Logo from '../../../../assets/images/logos/logo.svg';
+import Facebook from '../../../../assets/images/brands/facebook.svg';
+import Google from '../../../../assets/images/brands/google.svg';
 
 const initialValues = {
   fullname: '',
@@ -129,13 +131,13 @@ function Registration(props) {
       <div className='text-center'>
         <NavLink
           to='/auth/login'
-          className='btn text-primary btn-hover-bg-white btn-bg-secondary font-size-h6 w-50'
+          className='btn text-primary btn-hover-bg-white btn-bg-secondary font-size-h6 w-50 rounded-right-0'
         >
           Login
         </NavLink>
         <NavLink
           to='/auth/registration'
-          className='btn text-primary btn-hover-bg-white btn-bg-secondary font-size-h6 w-50'
+          className='btn text-primary btn-hover-bg-white btn-bg-secondary font-size-h6 w-50 rounded-left-0'
         >
           Sign up
         </NavLink>
@@ -153,25 +155,6 @@ function Registration(props) {
           </div>
         )}
         {/* end: Alert */}
-
-        {/* begin: Fullname */}
-        <div className='form-group fv-plugins-icon-container'>
-          <input
-            placeholder='Full name'
-            type='text'
-            className={`form-control form-control-solid h-auto py-5 px-6 ${getInputClasses(
-              'fullname'
-            )}`}
-            name='fullname'
-            {...formik.getFieldProps('fullname')}
-          />
-          {formik.touched.fullname && formik.errors.fullname ? (
-            <div className='fv-plugins-message-container'>
-              <div className='fv-help-block'>{formik.errors.fullname}</div>
-            </div>
-          ) : null}
-        </div>
-        {/* end: Fullname */}
 
         {/* begin: Email */}
         <div className='form-group fv-plugins-icon-container'>
@@ -230,6 +213,34 @@ function Registration(props) {
         </div>
         {/* end: Password */}
 
+        {/* begin: Terms and Conditions */}
+        <div className='form-group'>
+          <label className='checkbox'>
+            <input
+              type='checkbox'
+              name='acceptTerms'
+              className='m-1'
+              {...formik.getFieldProps('acceptTerms')}
+            />
+            <span className='mr-2' />
+            <Link
+              to='/terms'
+              target='_blank'
+              className='mr-1'
+              rel='noopener noreferrer'
+            >
+              I agree the Terms & Conditions
+            </Link>
+          </label>
+
+          {formik.touched.acceptTerms && formik.errors.acceptTerms ? (
+            <div className='fv-plugins-message-container'>
+              <div className='fv-help-block'>{formik.errors.acceptTerms}</div>
+            </div>
+          ) : null}
+        </div>
+        {/* end: Terms and Conditions */}
+
         <div className='form-group d-flex flex-wrap flex-center'>
           <button
             type='submit'
@@ -244,33 +255,31 @@ function Registration(props) {
             {loading && <span className='ml-3 spinner spinner-white'></span>}
           </button>
         </div>
-
-        {/* begin: Terms and Conditions */}
-        <div className='form-group'>
-          <label className='checkbox'>
-            <input
-              type='checkbox'
-              name='acceptTerms'
-              className='m-1'
-              {...formik.getFieldProps('acceptTerms')}
-            />
-            <Link
-              to='/terms'
-              target='_blank'
-              className='mr-1'
-              rel='noopener noreferrer'
+      </form>
+      <form>
+        <div className='py-4'>
+          <div className='text-muted text-uppercase font-size-sm text-center'>
+            or login with
+          </div>
+          <div className='d-flex justify-content-center'>
+            <button
+              type='button'
+              className={`btn btn-facebook font-weight-bold px-9 py-4 mx-1 my-3`}
             >
-              I agree the Terms & Conditions
-            </Link>
-            <span />
-          </label>
-          {formik.touched.acceptTerms && formik.errors.acceptTerms ? (
-            <div className='fv-plugins-message-container'>
-              <div className='fv-help-block'>{formik.errors.acceptTerms}</div>
-            </div>
-          ) : null}
+              <span>
+                <img height={20} width={20} src={Facebook} alt='facebook' />
+              </span>
+            </button>
+            <button
+              type='button'
+              className={`btn btn-google font-weight-bold px-9 py-4 mx-1 my-3`}
+            >
+              <span>
+                <img height={20} width={20} src={Google} alt='facebook' />
+              </span>
+            </button>
+          </div>
         </div>
-        {/* end: Terms and Conditions */}
       </form>
     </div>
   );

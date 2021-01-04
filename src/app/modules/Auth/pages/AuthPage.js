@@ -1,12 +1,35 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
 import React from 'react';
 import { Link, Switch, Redirect } from 'react-router-dom';
-import { toAbsoluteUrl } from '../../../../_metronic/_helpers';
 import { ContentRoute } from '../../../../_metronic/layout';
 import Login from './Login';
 import Registration from './Registration';
 import ForgotPassword from './ForgotPassword';
 import '../../../../_metronic/_assets/sass/pages/login/classic/login-1.scss';
+
+// images
+import BgOne from '../../../../assets/images/background/bg-image-1.svg';
+import videoOne from '../../../../assets/images/images/videoOne.svg';
+import IconOne from '../../../../assets/images/icons/icon-1.svg';
+import IconTwo from '../../../../assets/images/icons/icon-2.svg';
+import IconThree from '../../../../assets/images/icons/icon-3.svg';
+
+const VideoWorkaround = ({ src }) => (
+  <div
+    className='mx-auto bg-white p-2 rounded-xl d-flex'
+    dangerouslySetInnerHTML={{
+      __html: `
+      <video
+        controls
+        playsinline
+        src="${src}"
+        class='video h-100 w-100 rounded-lg'
+        type='video/mp4'
+      />
+    `,
+    }}
+  />
+);
 
 export function AuthPage() {
   return (
@@ -20,58 +43,70 @@ export function AuthPage() {
           {/*begin::Aside*/}
           <div
             className='login-aside d-flex flex-row-auto bgi-size-cover bgi-no-repeat p-10 p-lg-10'
-            // style={{
-            //   backgroundImage: `url(${toAbsoluteUrl('/media/bg/bg-4.jpg')})`,
-            // }}
+            style={{
+              backgroundImage: `url(${BgOne})`,
+            }}
           >
             {/*begin: Aside Container*/}
             <div className='d-flex flex-row-fluid flex-column justify-content-between'>
               {/* start:: Aside header */}
-              {/* <Link to='/' className='flex-column-auto mt-5'>
-                <img
-                  alt='Logo'
-                  className='max-h-70px'
-                  src={toAbsoluteUrl('/media/logos/logo-letter-1.png')}
-                />
-              </Link> */}
+              <div className='mb-15 mb-lg-0'>
+                <div className='text-center col-12 px-0 bg-white rounded-lg mx-auto position-relative'>
+                  <VideoWorkaround src='https://www.radiantmediaplayer.com/media/big-buck-bunny-360p.mp4' />
+                  <span className='pos-center'>
+                    <img
+                      height='100%'
+                      width='100%'
+                      src={videoOne}
+                      alt='video'
+                    />
+                  </span>
+                </div>
+              </div>
               {/* end:: Aside header */}
 
               {/* start:: Aside content */}
-              <div className='flex-column-fluid d-flex flex-column justify-content-center text-primary'>
+              <div className='flex-column-fluid d-flex flex-column justify-content-center text-white'>
                 <div className='row mx-0 mb-5 flex-column flex-lg-row align-items-center align-items-lg-start justify-content-center'>
-                  <span className='col-lg-8 mr-3 text-center text-lg-right'>
-                    <h3 className='font-size-h1 mb-5'>Feature #1</h3>
+                  <span className='mb-3 mb-lg-0 w-60px h-60px d-flex align-items-center justify-content-center border border-2 border-white rounded-circle'>
+                    <i className='fa-3x text-white'>
+                      <img src={IconOne} alt='icon' />
+                    </i>
+                  </span>
+                  <span className='col-lg-8 mr-3 text-center text-lg-left'>
+                    <h6 className='mb-2'>Feature #1</h6>
                     <p className='font-weight-lighter opacity-80'>
                       The ultimate Bootstrap & React 16 admin theme framework
                       for next generation web apps.
                     </p>
-                  </span>
-                  <span className='order-first order-lg-last mb-3 mb-lg-0 w-80px h-80px d-flex align-items-center justify-content-center bg-white border border-5 border-primary rounded-circle'>
-                    <i className='fa fa-image fa-3x text-primary'></i>
                   </span>
                 </div>
                 <div className='row mx-0 mb-5 flex-column flex-lg-row align-items-center align-items-lg-start justify-content-center'>
-                  <span className='col-lg-8 mr-3 text-center text-lg-right'>
-                    <h3 className='font-size-h1 mb-5'>Feature #1</h3>
+                  <span className='mb-3 mb-lg-0 w-60px h-60px d-flex align-items-center justify-content-center border border-2 border-white rounded-circle'>
+                    <i className='fa-3x text-white'>
+                      <img src={IconTwo} alt='icon' />
+                    </i>
+                  </span>
+                  <span className='col-lg-8 mr-3 text-center text-lg-left'>
+                    <h6 className='mb-2'>Feature #1</h6>
                     <p className='font-weight-lighter opacity-80'>
                       The ultimate Bootstrap & React 16 admin theme framework
                       for next generation web apps.
                     </p>
-                  </span>
-                  <span className='order-first order-lg-last mb-3 mb-lg-0 w-80px h-80px d-flex align-items-center justify-content-center bg-white border border-5 border-primary rounded-circle'>
-                    <i className='fa fa-image fa-3x text-primary'></i>
                   </span>
                 </div>
                 <div className='row mx-0 mb-5 flex-column flex-lg-row align-items-center align-items-lg-start justify-content-center'>
-                  <span className='col-lg-8 mr-3 text-center text-lg-right'>
-                    <h3 className='font-size-h1 mb-5'>Feature #1</h3>
+                  <span className='mb-3 mb-lg-0 w-60px h-60px d-flex align-items-center justify-content-center border border-2 border-white rounded-circle'>
+                    <i className='fa-3x text-white'>
+                      <img src={IconThree} alt='icon' />
+                    </i>
+                  </span>
+                  <span className='col-lg-8 mr-3 text-center text-lg-left'>
+                    <h6 className='mb-2'>Feature #1</h6>
                     <p className='font-weight-lighter opacity-80'>
                       The ultimate Bootstrap & React 16 admin theme framework
                       for next generation web apps.
                     </p>
-                  </span>
-                  <span className='order-first order-lg-last mb-3 mb-lg-0 w-80px h-80px d-flex align-items-center justify-content-center bg-white border border-5 border-primary rounded-circle'>
-                    <i className='fa fa-image fa-3x text-primary'></i>
                   </span>
                 </div>
               </div>
