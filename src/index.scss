@@ -104,6 +104,10 @@
   cursor: default !important;
 }
 
+.header-fixed.subheader-fixed.subheader-enabled .wrapper {
+  padding-top: 23px !important;
+}
+
 // ===
 
 .text-primary,
@@ -143,8 +147,69 @@ a:hover {
 }
 
 .pos-center {
+  width: 105%;
+  border: 5px solid #fff;
+  border-radius: 35px;
   position: absolute;
-  top: 50%;
+  top: 60%;
   left: 50%;
   transform: translate(-50%, -50%);
+}
+
+.pos-center img {
+  border-radius: 27px;
+}
+
+// ===
+
+.Section-1 {
+  background-image: url(./assets/images/background/bg-hero.svg);
+  background-size: cover;
+}
+
+.Section-2 {
+  background-image: url(./assets/images/background/bg-section-2.svg);
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 170px;
+  background-color: mediumslateblue;
+}
+
+.Section-3 .play-link {
+  background-image: url(./assets/images/background/bg-image-2.svg);
+  background-position: center;
+  background-size: cover;
+  margin: auto;
+  width: 400px;
+}
+
+.Section-3 .carousel-control-prev,
+.Section-3 .carousel-control-next {
+  background-color: orange;
+  border-radius: 50px;
+  height: 40px;
+  width: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: auto;
+  box-shadow: 0 0 2px #000;
+}
+
+.Section-3 .carousel-control-prev {
+  background-color: #ddd;
+}
+
+.Section-3 .carousel-control-next {
+  background-color: orange;
+}
+
+.Section-4 {
+  background-color: #e8f9f8;
+}
+
+.Section-6 {
+  background-image: url(./assets/images/background/bg-hero-2.svg);
+  background-size: cover;
 }

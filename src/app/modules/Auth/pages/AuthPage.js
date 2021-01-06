@@ -51,7 +51,7 @@ export function AuthPage() {
             <div className='d-flex flex-row-fluid flex-column justify-content-between'>
               {/* start:: Aside header */}
               <div className='mb-15 mb-lg-0'>
-                <div className='text-center col-12 px-0 bg-white rounded-lg mx-auto position-relative'>
+                <div className='text-center col-9 px-0 bg-white rounded-lg mx-auto position-relative'>
                   <VideoWorkaround src='https://www.radiantmediaplayer.com/media/big-buck-bunny-360p.mp4' />
                   <span className='pos-center'>
                     <img
@@ -66,7 +66,7 @@ export function AuthPage() {
               {/* end:: Aside header */}
 
               {/* start:: Aside content */}
-              <div className='flex-column-fluid d-flex flex-column justify-content-center text-white'>
+              <div className='flex-column-fluid d-flex flex-column justify-content-center text-white mt-10'>
                 <div className='row mx-0 mb-5 flex-column flex-lg-row align-items-center align-items-lg-start justify-content-center'>
                   <span className='mb-3 mb-lg-0 w-60px h-60px d-flex align-items-center justify-content-center border border-2 border-white rounded-circle'>
                     <i className='fa-3x text-white'>
