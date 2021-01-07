@@ -160,6 +160,15 @@ a:hover {
   border-radius: 27px;
 }
 
+.hover-scale {
+  transition: all 0.3s ease;
+}
+
+.hover-scale:hover {
+  transition: all 0.3s ease;
+  transform: scale(0.95);
+}
+
 // ===
 
 .Section-1 {
@@ -211,5 +220,10 @@ a:hover {
 
 .Section-6 {
   background-image: url(./assets/images/background/bg-hero-2.svg);
+  background-size: cover;
+}
+
+.Section-7 {
+  background-image: url(./assets/images/background/bg-hero.svg);
   background-size: cover;
 }

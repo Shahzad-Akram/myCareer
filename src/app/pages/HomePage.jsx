@@ -1,6 +1,6 @@
 // rafc
 import React from 'react';
-import { Container } from '@material-ui/core';
+import { Button, Container, TextField } from '@material-ui/core';
 import { Row, Col, Card, CardColumns, Carousel } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 // import video from '../assets/header-muted.mp4'
@@ -29,7 +29,6 @@ import face5 from '../../assets/images/faces/face5.svg';
 import plan1 from '../../assets/images/plan/plan-1.svg';
 import plan2 from '../../assets/images/plan/plan-2.png';
 import plan3 from '../../assets/images/plan/plan-3.svg';
-
 import ImagePlay from '../../assets/images/images/play-button.svg';
 
 const OurTeam = [
@@ -126,7 +125,7 @@ export const HomePage = () => {
               </div>
 
               <div className='mt-10'>
-                <Link className='btn btn-warning text-white btn-lg'>
+                <Link className='btn btn-warning text-white text-hover-white btn-lg'>
                   Get Start Free
                 </Link>
               </div>
@@ -183,7 +182,7 @@ export const HomePage = () => {
           </div>
 
           <CardColumns>
-            <Card>
+            <Card className='hover-scale hover-opacity-70'>
               <Card.Img
                 variant='top'
                 src={Icon4}
@@ -199,7 +198,7 @@ export const HomePage = () => {
                 </Card.Text>
               </Card.Body>
             </Card>
-            <Card>
+            <Card className='hover-scale hover-opacity-70'>
               <Card.Img
                 variant='top'
                 src={Icon5}
@@ -215,7 +214,7 @@ export const HomePage = () => {
                 </Card.Text>
               </Card.Body>
             </Card>
-            <Card>
+            <Card className='hover-scale hover-opacity-70'>
               <Card.Img
                 variant='top'
                 src={Icon6}
@@ -462,7 +461,7 @@ export const HomePage = () => {
           <Row className='row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-xl-5'>
             {OurTeam.map((value) => (
               <Col className='mb-15 mb-xl-0'>
-                <div className='text-center'>
+                <div className='text-center hover-scale hover-opacity-92'>
                   <span
                     className='d-flex w-150px h-150px rounded-circle justify-content-center align-items-end mx-auto mb-3'
                     style={{ backgroundColor: '#FFEEDD' }}
@@ -495,7 +494,7 @@ export const HomePage = () => {
           </Row>
         </Container>
       </section>
-      <section className='Section-6 bg-white py-25'>
+      <section className='Section-6 py-25'>
         <Container>
           <div className='text-center mb-20 text-white'>
             <h1 className='text-uppercase font-weight-boldest'>
@@ -507,19 +506,90 @@ export const HomePage = () => {
           </div>
           <Row className='row-cols-1 row-cols-lg-3 text-center'>
             <Col>
-              <Link>
-                <img height={500} src={plan1} alt='Plan' />
+              <Link className='hover-opacity-93'>
+                <img
+                  className='hover-scale'
+                  height={500}
+                  src={plan1}
+                  alt='Plan'
+                />
               </Link>
             </Col>
             <Col className='my-12 my-lg-0'>
-              <Link>
-                <img height={500} src={plan2} alt='Plan' />
+              <Link className='hover-opacity-93'>
+                <img
+                  className='hover-scale'
+                  height={500}
+                  src={plan2}
+                  alt='Plan'
+                />
               </Link>
             </Col>
             <Col>
-              <Link>
-                <img height={500} src={plan3} alt='Plan' />
+              <Link className='hover-opacity-93'>
+                <img
+                  className='hover-scale'
+                  height={500}
+                  src={plan3}
+                  alt='Plan'
+                />
               </Link>
+            </Col>
+          </Row>
+        </Container>
+      </section>
+      <section className='Section-7 py-25'>
+        <Container>
+          <Row className='justify-content-between'>
+            <Col md={5}>
+              <h1 className='font-weight-bolder'>About Us</h1>
+              <p className='font-size-h6 text-black-50'>
+                Lorem ipsum dolor, sit amet consectetur adipisicing elit.
+                Excepturi natus, fugit corporis nihil nostrum qui doloremque
+                nisi tempore libero iste est officiis at molestiae consectetur
+                sit amet iure incidunt alias?
+              </p>
+
+              <a
+                href='tel:852301030100'
+                className='btn bg-primary text-white rounded-pill d-flex align-items-center w-180px p-1'
+              >
+                <span className='bg-white h-30px w-30px rounded-circle d-flex align-items-center justify-content-center mr-2'>
+                  <i
+                    className='fa fa-phone-alt text-primary small'
+                    style={{ fontSize: '0.9rem', paddingRight: 0 }}
+                  ></i>
+                </span>
+                <span>(+852) 301030100</span>
+              </a>
+              <div className='mt-10'>
+                <span>
+                  <img src={Logo3} alt='Brand-Logo' />
+                </span>
+              </div>
+            </Col>
+            <Col md={6} className='mt-10 mt-md-0'>
+              <div className='p-10 shadow-sm rounded-lg bg-white'>
+                <h2 className='text-uppercase font-weight-bolder mb-7'>
+                  Get in Touch!
+                </h2>
+                <form>
+                  <TextField type='mail' label='Email' margin='normal' />
+                  <TextField type='text' label='Subject' margin='normal' />
+                  <TextField
+                    label='Write Your Message Here...'
+                    multiline
+                    rowsMax='8'
+                    margin='normal'
+                  />
+                  <Button
+                    type='submit'
+                    className='MuiButton-contained bg-warning text-white w-100 py-4 h6 mt-10'
+                  >
+                    Submit Now
+                  </Button>
+                </form>
+              </div>
             </Col>
           </Row>
         </Container>
