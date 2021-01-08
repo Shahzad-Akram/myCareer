@@ -165,8 +165,67 @@ a:hover {
 }
 
 .hover-scale:hover {
+  z-index: 555;
   transition: all 0.3s ease;
   transform: scale(0.95);
+}
+
+// Side Bar
+
+.aside {
+  padding: 0 20px !important;
+}
+
+.aside-minimize:not(.aside-minimize-hover) .aside {
+  width: 70px;
+  padding: 0 !important;
+}
+
+.aside,
+.aside .brand,
+.aside .aside-menu {
+  background-color: #fff !important;
+}
+
+.aside-menu
+  .menu-nav
+  > .menu-item:not(.menu-item-parent):not(.menu-item-open):not(.menu-item-here):not(.menu-item-active):hover
+  > .menu-heading,
+.aside-menu
+  .menu-nav
+  > .menu-item:not(.menu-item-parent):not(.menu-item-open):not(.menu-item-here):not(.menu-item-active):hover
+  > .menu-link,
+.aside-menu .menu-nav > .menu-item.menu-item-active > .menu-heading,
+.aside-menu .menu-nav > .menu-item.menu-item-active > .menu-link {
+  background-color: #f3f6f9 !important;
+}
+
+.aside-menu
+  .menu-nav
+  > .menu-item:not(.menu-item-parent):not(.menu-item-open):not(.menu-item-here):not(.menu-item-active):hover
+  > .menu-heading
+  .menu-icon,
+.aside-menu
+  .menu-nav
+  > .menu-item:not(.menu-item-parent):not(.menu-item-open):not(.menu-item-here):not(.menu-item-active):hover
+  > .menu-link
+  .menu-icon,
+.aside-menu .menu-nav > .menu-item.menu-item-active > .menu-link .menu-icon {
+  color: #94e0df;
+}
+
+.aside-menu
+  .menu-nav
+  > .menu-item:not(.menu-item-parent):not(.menu-item-open):not(.menu-item-here):not(.menu-item-active):hover
+  > .menu-heading
+  .menu-text,
+.aside-menu
+  .menu-nav
+  > .menu-item:not(.menu-item-parent):not(.menu-item-open):not(.menu-item-here):not(.menu-item-active):hover
+  > .menu-link
+  .menu-text,
+.aside-menu .menu-nav > .menu-item.menu-item-active > .menu-link .menu-text {
+  color: #94e0df;
 }
 
 // ===

@@ -90,7 +90,7 @@ const VideoWorkaround = ({ src }) => (
 export const HomePage = () => {
   return (
     <>
-      <section className='Section-1 vh-100'>
+      <section className='Section-1 py-30'>
         <Container fixed className='h-100'>
           <Row className='h-100 mt-5 align-items-center'>
             <Col xl={5} className='d-flex flex-column mt-4'>
@@ -347,7 +347,7 @@ export const HomePage = () => {
           </div>
           <Row className='justify-content-center'>
             <Col lg={4} className='d-flex flex-column'>
-              <div className='row mx-0 mb-5 flex-column flex-lg-row align-items-center align-items-lg-start justify-content-center'>
+              <div className='row mx-0 mb-5 flex-column flex-lg-row align-items-center align-items-lg-start justify-content-center hover-scale hover-opacity-92'>
                 <span className='col-lg-8 ms-3 text-center text-lg-left'>
                   <h6 className='mb-2'>Feature #1</h6>
                   <p className='font-weight-lighter opacity-80'>
@@ -368,7 +368,7 @@ export const HomePage = () => {
                 </span>
               </div>
 
-              <div className='row mx-0 mb-5 mt-auto flex-column flex-lg-row align-items-center align-items-lg-start justify-content-center'>
+              <div className='row mx-0 mb-5 mt-auto flex-column flex-lg-row align-items-center align-items-lg-start justify-content-center hover-scale hover-opacity-92'>
                 <span className='col-lg-8 ms-3 text-center text-lg-left'>
                   <h6 className='mb-2'>Feature #3</h6>
                   <p className='font-weight-lighter opacity-80'>
@@ -398,7 +398,7 @@ export const HomePage = () => {
               />
             </Col>
             <Col lg={4} className='d-flex flex-column'>
-              <div className='row mx-0 mb-5 flex-column flex-lg-row align-items-center align-items-lg-start justify-content-center'>
+              <div className='row mx-0 mb-5 flex-column flex-lg-row align-items-center align-items-lg-start justify-content-center hover-scale hover-opacity-92'>
                 <span className='mb-3 mb-lg-0 w-60px h-60px d-flex align-items-center justify-content-center bg-white border border-2 border-warning rounded-circle'>
                   <i className='fa-3x text-warning position-relative'>
                     <img src={Icon10} alt='icon' />
@@ -419,7 +419,7 @@ export const HomePage = () => {
                 </span>
               </div>
 
-              <div className='row mx-0 mb-5 mt-auto flex-column flex-lg-row align-items-center align-items-lg-start justify-content-center'>
+              <div className='row mx-0 mb-5 mt-auto flex-column flex-lg-row align-items-center align-items-lg-start justify-content-center hover-scale hover-opacity-92'>
                 <span className='mb-3 mb-lg-0 w-60px h-60px d-flex align-items-center justify-content-center bg-white border border-2 border-warning rounded-circle'>
                   <i className='fa-3x text-warning position-relative'>
                     <img src={Icon9} alt='icon' />
