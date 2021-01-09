@@ -1,13 +1,11 @@
 import React from 'react';
 
-const Question1 = () => {
+const Question1 = ({ title }) => {
   return (
     <div>
-      <h4 className='font-weight-bold mb-6'>
-        Question 1: Lorem ipsum dolor site amet
-      </h4>
-      <div className='d-flex justify-content-between mb-8'>
-        <div className='d-flex align-items-center'>
+      <h4 className='font-weight-bold mb-6'>{title}</h4>
+      <div className='row mx-0 justify-content-center justify-content-md-between mb-8'>
+        <div className='d-flex align-items-center mb-8 mb-md-0'>
           <span className='mr-4'>
             <img
               className='rounded-lg'
@@ -53,8 +51,8 @@ const Question1 = () => {
         </div>
       </div>
       {/* -- */}
-      <div className='d-flex justify-content-between mb-8'>
-        <div className='d-flex align-items-center'>
+      <div className='row mx-0 justify-content-center justify-content-md-between mb-8'>
+        <div className='d-flex align-items-center mb-8 mb-md-0'>
           <span className='mr-4'>
             <img
               className='rounded-lg'
@@ -99,8 +97,8 @@ const Question1 = () => {
           </button>
         </div>
       </div>
-      <div className='d-flex justify-content-between mb-8'>
-        <div className='d-flex align-items-center'>
+      <div className='row mx-0 justify-content-center justify-content-md-between mb-8'>
+        <div className='d-flex align-items-center mb-8 mb-md-0'>
           <span className='mr-4'>
             <img
               className='rounded-lg'
@@ -121,13 +119,13 @@ const Question1 = () => {
         <div>
           <button
             type='button'
-            className='btn btn-bg-light btn-hover-bg-warning text-hover-white mr-2'
+            className='btn btn-warning btn-hover-bg-warning text-hover-white mr-2'
           >
             <b>1</b>
           </button>
           <button
             type='button'
-            className='btn btn-warning text-hover-white mr-2'
+            className='btn btn-bg-light text-hover-white mr-2'
           >
             <b>2</b>
           </button>
@@ -145,8 +143,8 @@ const Question1 = () => {
           </button>
         </div>
       </div>
-      <div className='d-flex justify-content-between mb-8'>
-        <div className='d-flex align-items-center'>
+      <div className='row mx-0 justify-content-center justify-content-md-between mb-8'>
+        <div className='d-flex align-items-center mb-8 mb-md-0'>
           <span className='mr-4'>
             <img
               className='rounded-lg'
@@ -173,13 +171,13 @@ const Question1 = () => {
           </button>
           <button
             type='button'
-            className='btn btn-warning text-hover-white mr-2'
+            className='btn btn-bg-light text-hover-white mr-2'
           >
             <b>2</b>
           </button>
           <button
             type='button'
-            className='btn btn-bg-light btn-hover-bg-warning text-hover-white mr-2'
+            className='btn btn-warning btn-hover-bg-warning text-hover-white mr-2'
           >
             <b>3</b>
           </button>

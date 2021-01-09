@@ -108,6 +108,10 @@
   padding-top: 23px !important;
 }
 
+.object-cover {
+  object-fit: cover;
+}
+
 // ===
 
 .text-primary,
@@ -285,4 +289,41 @@ a:hover {
 .Section-7 {
   background-image: url(./assets/images/background/bg-hero.svg);
   background-size: cover;
+}
+
+// Step
+
+.MuiStepIcon-root {
+  color: #ddd !important;
+  fill: transparent !important;
+  border: 1px solid #ddd;
+  border-radius: 50px;
+}
+
+.MuiStepIcon-root.MuiStepIcon-active {
+  color: #1bc5bd !important;
+  fill: transparent !important;
+  border: 1px solid #1bc5bd;
+  border-radius: 50px;
+}
+
+.MuiStepIcon-root.MuiStepIcon-active .MuiStepIcon-text {
+  fill: #1bc5bd !important;
+}
+
+.MuiStepIcon-text {
+  font-size: 1rem !important;
+  font-weight: bold;
+  font-family: Poppins;
+}
+
+.MuiStepLabel-label.MuiStepLabel-active {
+  color: #1bc5bd !important;
+  font-weight: bold;
+}
+
+@media (max-width: 990px) {
+  .MuiStepConnector-line {
+    display: none !important;
+  }
 }
