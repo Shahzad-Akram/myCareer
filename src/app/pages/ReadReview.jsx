@@ -7,9 +7,9 @@ import { CustomTable } from '../CustomComponents/CustomTable';
 // Components
 
 // images
-import ImageTwo from '../../assets/images/images/videoTwo.png';
-import face2 from '../../assets/images/faces/face2.svg';
-import { TextField } from '@material-ui/core';
+import BgImageOne from '../../assets/images/background/bg-image-3.svg';
+import BgImageTwo from '../../assets/images/background/bg-image-4.svg';
+import BgImageThree from '../../assets/images/background/bg-image-5.svg';
 
 function getStepsOne() {
   return ['Step 1', 'Step 2', 'Step 3', 'Step 4'];
@@ -82,7 +82,15 @@ export const ReadReview = () => {
             <h4 className='mb-8'>Refine your skill by more practice</h4>
             <Row className='row-cols-1 row-cols-md-2 row-cols-lg-3 justify-content-center'>
               <Col>
-                <div className='bg-success p-5 rounded-lg'>
+                <div
+                  className='p-5 rounded-lg'
+                  style={{
+                    backgroundImage: `url(${BgImageOne})`,
+                    backgroundRepeat: 'no-repeat',
+                    backgroundSize: 'cover',
+                    height: 180,
+                  }}
+                >
                   <i className='fa fa-user h1 p-0 mb-5 text-white'></i>
                   <div className='mb-1 text-white font-weight-bold h6'>
                     Average OWN Ratings
@@ -99,11 +107,22 @@ export const ReadReview = () => {
                   </div>
                 </div>
               </Col>
-              <Col className='mt-10 mt-md-0'>
-                <div className='bg-success p-5 rounded-lg'>
-                  <i className='fa fa-user h1 p-0 mb-5 text-white'></i>
+              <Col
+                className='mt-10 mt-md-0
+              '
+              >
+                <div
+                  className='p-5 rounded-lg'
+                  style={{
+                    backgroundImage: `url(${BgImageTwo})`,
+                    backgroundRepeat: 'no-repeat',
+                    backgroundSize: 'cover',
+                    height: 180,
+                  }}
+                >
+                  <i className='fa fa-user-tie h1 p-0 mb-5 text-white'></i>
                   <div className='mb-1 text-white font-weight-bold h6'>
-                    Average OWN Ratings
+                    Average Trainer's Ratings
                   </div>
                   <div>
                     <span>
@@ -118,21 +137,37 @@ export const ReadReview = () => {
                 </div>
               </Col>
               <Col className='mt-10 mt-lg-0'>
-                <div className='bg-success p-5 rounded-lg'>
-                  <i className='fa fa-user h1 p-0 mb-5 text-white'></i>
-                  <div className='mb-1 text-white font-weight-bold h6'>
-                    Average OWN Ratings
+                <div
+                  className='p-5 rounded-lg'
+                  style={{
+                    backgroundImage: `url(${BgImageThree})`,
+                    backgroundRepeat: 'no-repeat',
+                    backgroundSize: 'cover',
+                    height: 180,
+                  }}
+                >
+                  <i className='fa fa-ticket-alt h1 p-0 mb-5 text-white'></i>
+                  <div className='d-flex justify-content-between'>
+                    <div>
+                      <div className='mb-1 text-white font-weight-bold h6'>
+                        Remaining Credit
+                      </div>
+                      <div className='mb-3 text-white font-weight-bold h6'>
+                        1/10
+                      </div>
+                    </div>
+                    <div>
+                      <div className='mb-1 text-white font-weight-bold h6'>
+                        Retry Times
+                      </div>
+                      <div className='mb-3 text-white font-weight-bold h6'>
+                        1/10
+                      </div>
+                    </div>
                   </div>
-                  <div>
-                    <span>
-                      <i className='fa fa-star text-white small p-0 mr-2'></i>
-                      <i className='fa fa-star text-white small p-0 mr-2'></i>
-                      <i className='fa fa-star  text-white small p-0 mr-2'></i>
-                      <i className='fa fa-star text-dark-25 small p-0 mr-2'></i>
-                      <i className='fa fa-star text-dark-25 small p-0 mr-2'></i>
-                    </span>
-                    <span className='font-weight-bold text-white'>(3.0)</span>
-                  </div>
+                  <a href='/' className='text-white'>
+                    Buy More credit &#62;
+                  </a>
                 </div>
               </Col>
             </Row>
