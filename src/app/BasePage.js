@@ -9,6 +9,7 @@ import { Dashboard2Page } from './pages/Dashboard2Page';
 import { PresentationVideos } from './pages/PresentationVideos/PresentationVideos';
 import { RecordInterview } from './pages/RecordInterview';
 import { Dashboard2Paid } from './pages/Dashboard2Paid';
+import { ReadReview } from './pages/ReadReview';
 
 const GoogleMaterialPage = lazy(() =>
   import('./modules/GoogleMaterialExamples/GoogleMaterialPage')
@@ -42,6 +43,7 @@ export default function BasePage() {
         <ContentRoute path='/home' component={HomePage} />
         <ContentRoute path='/dashboard2' component={Dashboard2Page} />
         <ContentRoute path='/dashboard2Paid' component={Dashboard2Paid} />
+        <ContentRoute path='/readReview' component={ReadReview} />
 
         <ContentRoute
           path='/presentationVideos'
