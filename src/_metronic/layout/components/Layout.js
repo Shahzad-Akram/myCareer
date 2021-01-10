@@ -55,10 +55,10 @@ export function Layout({ children }) {
               {layoutProps.subheaderDisplay && <SubHeader />}
               {/*begin::Entry*/}
               {!layoutProps.contentExtended && (
-                <div className='d-flex flex-column-fluid'>
+                <div>
                   {/*begin::Container*/}
                   <div
-                    className={`px-0 ${layoutProps.contentContainerClasses}`}
+                   
                   >
                     {children}
                   </div>
