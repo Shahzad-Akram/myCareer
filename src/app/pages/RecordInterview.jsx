@@ -89,7 +89,7 @@ export const RecordInterview = () => {
               />
 
               <img
-                className='h-100px w-150px object-cover position-absolute left-0 top-0 rounded-lg ml-10 mt-10'
+                className='h-100px w-150px object-cover position-absolute left-0 top-0 rounded-lg shadow-sm ml-10 mt-10'
                 src='https://source.unsplash.com/random'
                 alt='user'
               />

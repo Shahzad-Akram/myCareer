@@ -74,12 +74,12 @@ export function AsideMenuList({ layoutProps }) {
 
         <li
           className={`menu-item mb-5 ${getMenuItemActive(
-            '/presentationPractice',
+            '/dashboard2Paid',
             false
           )}`}
           aria-haspopup='true'
         >
-          <NavLink className='menu-link' to='/presentationPractice'>
+          <NavLink className='menu-link' to='/dashboard2Paid'>
             <span className='svg-icon menu-icon'>
               <SidebarIcon4 />
             </span>
