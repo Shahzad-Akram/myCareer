@@ -1,18 +1,16 @@
 import React, { useState } from 'react';
-import { Row, Col, Spinner, Carousel, Modal } from 'react-bootstrap';
-import { Chart } from 'react-google-charts';
+import { Row, Col, Carousel, Modal } from 'react-bootstrap';
+
 import Button from '@material-ui/core/Button';
-import Menu from '@material-ui/core/Menu';
-import MenuItem from '@material-ui/core/MenuItem';
+
 import { Link } from 'react-router-dom';
 
 //  images
 import ImagePlay from '../../assets/images/images/play-button.svg';
 import ImageOne from '../../assets/images/images/videoOne.svg';
-import resultPicOne from '../../assets/images/results/result1.svg';
-import resultPicTwo from '../../assets/images/results/result2.svg';
+import ImageTwo from '../../assets/images/images/videoTwo.png';
 
-const ResultFree = () => {
+const PresentationVideosStep1 = ({ title }) => {
   const [anchorEl, setAnchorEl] = useState(null);
   const [show, setShow] = useState(false);
 
@@ -29,11 +27,11 @@ const ResultFree = () => {
 
   return (
     <>
-      <Row className='mt-10'>
+      <Row>
         <Col>
           <section className='bg-white rounded-lg p-5'>
             <div className='d-flex justify-content-between'>
-              <h5 className='mb-0 font-weight-bold'>Result</h5>
+              <h5 className='mb-0 font-weight-bold'>{title}</h5>
 
               <div>
                 <Button
@@ -43,69 +41,35 @@ const ResultFree = () => {
                 >
                   <i className='fa fa-plus-circle'></i>
                 </Button>
-                {/* <Menu
-                  id='simple-menu'
-                  anchorEl={anchorEl}
-                  keepMounted
-                  open={Boolean(anchorEl)}
-                  onClose={handleClose}
-                >
-                  <MenuItem onClick={handleClose} onClick={handleShow}>Profile</MenuItem>
-                  <MenuItem onClick={handleClose}>My account</MenuItem>
-                  <MenuItem onClick={handleClose}>Logout</MenuItem>
-                </Menu> */}
               </div>
             </div>
 
-            <div className='row'>
-              <Col className='order-last order-xl-first pb-5 pb-xl-0'>
-                <Chart
-                  width={'100%'}
-                  height={'300px'}
-                  chartType='PieChart'
-                  loader={
-                    <div className='p-5'>
-                      <Spinner animation='border' variant='secondary' />
-                    </div>
-                  }
-                  data={[
-                    ['Task', 'Hours per Day'],
-                    ['Work', 11],
-                    ['Eat', 2],
-                    ['Commute', 2],
-                    ['Watch TV', 2],
-                    ['Sleep', 7],
-                  ]}
-                  rootProps={{ 'data-testid': '1' }}
-                />
-                <div className='p-5'>
-                  <h4 className='mb-4 font-weight-bold'>Creator</h4>
-                  <div className='mb-4 font-weight-bold'>
-                    Lorem ipsum dolor sit amet consectetur, adipisicing elit.
-                    Totam, aliquam.
-                  </div>
-                  <p className='mb-4 text-black-50'>
-                    Lorem ipsum, dolor sit amet consectetur adipisicing elit.
-                    Beatae numquam cumque, quam eum distinctio iste illo dolorum
-                    exercitationem porro eligendi provident in magni voluptate
-                    alias. Porro nulla iste exercitationem repudiandae.
-                  </p>
-                  <p className='mb-4 text-black-50'>
-                    Lorem ipsum, dolor sit amet consectetur adipisicing elit.
-                    Beatae numquam cumque, quam eum distinctio iste illo dolorum
-                    exercitationem porro eligendi provident in magni voluptate
-                    alias. Porro nulla iste exercitationem repudiandae.
-                  </p>
+            <div>
+              <div className='py-5'>
+                <h2 className='mb-4 font-weight-bold'>Learn Here</h2>
+                <div className='mb-4 font-weight-bold'>
+                  Lorem ipsum dolor sit amet consectetur, adipisicing elit.
+                  Totam, aliquam.
                 </div>
-              </Col>
-              <Col xl={4}>
-                <div
-                  className='d-flex align-items-center mx-auto'
-                  style={{ height: '100%', width: '90%' }}
-                >
-                  <img width='100%' height={400} src={resultPicOne} alt='pic' />
-                </div>
-              </Col>
+                <p className='mb-4 text-black-50'>
+                  Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+                  Beatae numquam cumque, quam eum distinctio iste illo dolorum
+                  exercitationem porro eligendi provident in magni voluptate
+                  alias. Porro nulla iste exercitationem repudiandae.
+                </p>
+                <p className='mb-4 text-black-50'>
+                  Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+                  Beatae numquam cumque, quam eum distinctio iste illo dolorum
+                  exercitationem porro eligendi provident in magni voluptate
+                  alias. Porro nulla iste exercitationem repudiandae.
+                </p>
+                <p className='mb-4 text-black-50'>
+                  Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+                  Beatae numquam cumque, quam eum distinctio iste illo dolorum
+                  exercitationem porro eligendi provident in magni voluptate
+                  alias. Porro nulla iste exercitationem repudiandae.
+                </p>
+              </div>
             </div>
           </section>
         </Col>
@@ -129,12 +93,12 @@ const ResultFree = () => {
               href='https://www.youtube.com/watch?v=Q3oItpVa9fs'
               target='_blank'
               rel='noopener noreferrer'
-              className='play-link d-flex flex-column justify-content-center mb-3'
+              className='play-link d-flex flex-column justify-content-center mb-3 position-relative'
             >
               <img
                 className='rounded-lg object-cover'
                 height={200}
-                src='https://source.unsplash.com/random'
+                src={ImageTwo}
                 alt='pic'
               />
               <img
@@ -144,7 +108,7 @@ const ResultFree = () => {
                 className='position-absolute'
                 style={{
                   left: '50%',
-                  top: '43%',
+                  top: '50%',
                   transform: 'translate(-50%, -50%)',
                 }}
               />
@@ -155,7 +119,7 @@ const ResultFree = () => {
                   className='object-cover rounded-circle shadow-sm'
                   height={40}
                   width={40}
-                  src='https://source.unsplash.com/random'
+                  src={ImageTwo}
                   alt='pic'
                 />
               </span>
@@ -181,7 +145,7 @@ const ResultFree = () => {
                 <Row>
                   <Col lg={5} className='ml-auto mt-10 mt-lg-0'>
                     <h6 className='text-primary mb-10'> 1/3</h6>
-                    <h2 className='font-weight-bolder'>Join our program</h2>
+                    <h2 className='font-weight-bolder'>Welcome Tour</h2>
                     <h6>
                       Lorem, ipsum dolor sit amet consectetur adipisicing elit.
                       Possimus,
@@ -198,9 +162,6 @@ const ResultFree = () => {
                       itaque et. Libero quam, ullam, architecto non repellat at
                       provident, tempora laboriosam sapiente debitis eveniet?
                     </p>
-                    <button className='btn btn-primary mt-3'>
-                      Register Now
-                    </button>
                   </Col>
                   <Col lg={6} className='order-lg-last  order-first'>
                     <Link className='play-link d-flex flex-column justify-content-center'>
@@ -224,7 +185,7 @@ const ResultFree = () => {
                 <Row>
                   <Col lg={5} className='ml-auto mt-10 mt-lg-0'>
                     <h6 className='text-primary mb-10'> 2/3</h6>
-                    <h2 className='font-weight-bolder'>Join our program</h2>
+                    <h2 className='font-weight-bolder'>Welcome Tour</h2>
                     <h6>
                       Lorem, ipsum dolor sit amet consectetur adipisicing elit.
                       Possimus,
@@ -241,12 +202,9 @@ const ResultFree = () => {
                       itaque et. Libero quam, ullam, architecto non repellat at
                       provident, tempora laboriosam sapiente debitis eveniet?
                     </p>
-                    <button className='btn btn-primary mt-3'>
-                      Register Now
-                    </button>
                   </Col>
                   <Col lg={6} className='order-lg-last  order-first'>
-                    <Link className='play-link d-flex flex-column justify-content-center position-relative'>
+                    <Link className='play-link d-flex flex-column justify-content-center'>
                       <img width='90%' height={300} src={ImageOne} alt='pic' />
                       <img
                         height={70}
@@ -267,7 +225,7 @@ const ResultFree = () => {
                 <Row>
                   <Col lg={5} className='ml-auto mt-10 mt-lg-0'>
                     <h6 className='text-primary mb-10'> 3/3</h6>
-                    <h2 className='font-weight-bolder'>Join our program</h2>
+                    <h2 className='font-weight-bolder'>Welcome Tour</h2>
                     <h6>
                       Lorem, ipsum dolor sit amet consectetur adipisicing elit.
                       Possimus,
@@ -284,9 +242,6 @@ const ResultFree = () => {
                       itaque et. Libero quam, ullam, architecto non repellat at
                       provident, tempora laboriosam sapiente debitis eveniet?
                     </p>
-                    <button className='btn btn-primary mt-3'>
-                      Register Now
-                    </button>
                   </Col>
                   <Col lg={6} className='order-lg-last  order-first'>
                     <Link className='play-link d-flex flex-column justify-content-center'>
@@ -314,4 +269,4 @@ const ResultFree = () => {
   );
 };
 
-export default ResultFree;
+export default PresentationVideosStep1;

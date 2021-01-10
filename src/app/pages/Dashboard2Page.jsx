@@ -236,7 +236,7 @@ export const Dashboard2Page = () => {
           ) : (
             <div className='bg-white p-8 rounded-lg mt-10'>
               <Typography>{getStepContent(activeStep)}</Typography>
-              <div className='row justify-content-between'>
+              <div className='row justify-content-between mt-8 pt-8 border-top'>
                 <div className='col-12 col-md-3'>
                   <StepperTwo
                     activeStepOne={activeStep}
