@@ -195,12 +195,13 @@ a:hover {
 
 .aside {
   padding: 0 20px !important;
-  z-index: 99999999999999;
+  z-index: 999 !important;
 }
 
 .aside-minimize:not(.aside-minimize-hover) .aside {
   width: 70px;
   padding: 0 !important;
+  z-index: 999 !important;
 }
 
 .aside,
