@@ -21,6 +21,7 @@ const VideoWorkaround = ({ src }) => (
       __html: `
       <video
         controls
+        autoplay
         playsinline
         src="${src}"
         class='video h-100 w-100 rounded-lg'
@@ -53,14 +54,14 @@ export function AuthPage() {
               <div className='mb-15 mb-lg-0'>
                 <div className='text-center col-9 px-0 bg-white rounded-lg mx-auto position-relative'>
                   <VideoWorkaround src='https://www.radiantmediaplayer.com/media/big-buck-bunny-360p.mp4' />
-                  <span className='pos-center'>
+                  {/* <span className='pos-center'>
                     <img
                       height='100%'
                       width='100%'
                       src={videoOne}
                       alt='video'
                     />
-                  </span>
+                  </span> */}
                 </div>
               </div>
               {/* end:: Aside header */}

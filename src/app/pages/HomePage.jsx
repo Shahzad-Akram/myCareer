@@ -77,6 +77,7 @@ const VideoWorkaround = ({ src }) => (
       __html: `
       <video
         controls
+        autoplay
         playsinline
         src="${src}"
         class='video h-100 w-100 rounded-top-left-xl rounded-top-right-xl'
@@ -90,7 +91,7 @@ const VideoWorkaround = ({ src }) => (
 export const HomePage = () => {
   return (
     <>
-      <section className='Section-1 py-30'>
+      <section id='Section-1' className='Section-1 py-30'>
         <Container fixed className='h-100'>
           <Row className='h-100 mt-5 align-items-center'>
             <Col xl={5} className='d-flex flex-column mt-4'>
@@ -170,7 +171,7 @@ export const HomePage = () => {
         </Container>
       </section>
       <section className='Section-2'></section>
-      <section className='Section-3 bg-white-o-100 py-25'>
+      <section id='Section-2' className='Section-3 bg-white-o-100 py-25'>
         <Container>
           <div className='text-center mb-10'>
             <h1 className='text-uppercase font-weight-boldest'>
@@ -233,7 +234,7 @@ export const HomePage = () => {
           </CardColumns>
         </Container>
       </section>
-      <section className='Section-3 bg-white py-25'>
+      <section id='Section-3' className='Section-3 bg-white py-25'>
         <Container>
           <div className='text-center mb-20'>
             <h1 className='text-uppercase font-weight-boldest'>Testimonials</h1>
@@ -335,7 +336,7 @@ export const HomePage = () => {
           </Carousel>
         </Container>
       </section>
-      <section className='Section-4 py-25'>
+      <section id='Section-4' className='Section-4 py-25'>
         <Container>
           <div className='text-center mb-20'>
             <h1 className='text-uppercase font-weight-boldest'>
@@ -448,7 +449,7 @@ export const HomePage = () => {
           </Row>
         </Container>
       </section>
-      <section className='Section-5 bg-white py-25'>
+      <section id='Section-5' className='Section-5 bg-white py-25'>
         <Container>
           <div className='text-center mb-20'>
             <h1 className='text-uppercase font-weight-boldest'>
@@ -494,7 +495,7 @@ export const HomePage = () => {
           </Row>
         </Container>
       </section>
-      <section className='Section-6 py-25'>
+      <section id='Section-6' className='Section-6 py-25'>
         <Container>
           <div className='text-center mb-20 text-white'>
             <h1 className='text-uppercase font-weight-boldest'>
@@ -538,7 +539,7 @@ export const HomePage = () => {
           </Row>
         </Container>
       </section>
-      <section className='Section-7 py-25'>
+      <section id='Section-7' className='Section-7 py-25'>
         <Container>
           <Row className='justify-content-between'>
             <Col md={5}>

@@ -33,37 +33,6 @@ export const Dashboard2Paid = () => {
         paddingTop: 70,
       }}
     >
-      <header className='row mx-0 justify-content-center justify-content-md-between align-items-center mb-10'>
-        <div className='font-weight-bolder h5 text-dark-65 mb-5 mb-md-0'>
-          Road to Success in Presentation
-        </div>
-        <div>
-          <button
-            type='button'
-            className='btn btn-bg-white btn-hover-bg-success p-2 mx-2 text-dark-25 text-hover-white'
-          >
-            <i className='fa fa-file-alt pr-0'></i>
-          </button>
-          <button
-            type='button'
-            className='btn btn-bg-white btn-hover-bg-success p-2 mx-2 text-dark-25 text-hover-white'
-          >
-            <i className='fa fa-shield-virus pr-0'></i>
-          </button>
-          <button
-            type='button'
-            className='btn btn-bg-white btn-hover-bg-success p-2 mx-2 text-dark-25 text-hover-white'
-          >
-            <i className='fa fa-comments pr-0'></i>
-          </button>
-          <button
-            type='button'
-            className='btn btn-bg-white btn-hover-bg-success p-2 mx-2 text-dark-25 text-hover-white'
-          >
-            <i className='fa fa-bell pr-0'></i>
-          </button>
-        </div>
-      </header>
       <div>
         <Stepper
           className='rounded-lg flex-column align-items-center flex-lg-row'

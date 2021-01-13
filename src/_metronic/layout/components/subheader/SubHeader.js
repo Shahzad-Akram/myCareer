@@ -52,57 +52,43 @@ export function SubHeader() {
   return (
     <div
       id='kt_subheader'
-      className={`subheader py-2 py-lg-4 d-none   ${layoutProps.subheaderCssClasses}`}
+      className={`subheader pt-15 pb-7 py-lg-10 bg-light-info  ${layoutProps.subheaderCssClasses}`}
     >
       <div
-        className={`${layoutProps.subheaderContainerCssClasses} d-flex align-items-center justify-content-between flex-wrap flex-sm-nowrap`}
+        className={`container align-items-center justify-content-between flex-wrap flex-sm-nowrap`}
       >
         {/* Info */}
-        <div className='d-flex align-items-center flex-wrap mr-1'>
-          {layoutProps.subheaderMobileToggle && (
-            <button
-              className='burger-icon burger-icon-left mr-4 d-inline-block d-lg-none'
-              id='kt_subheader_mobile_toggle'
-            >
-              <span />
-            </button>
-          )}
-
-          <div className='d-flex align-items-baseline mr-5'>
-            <h5 className='text-dark font-weight-bold my-2 mr-5'>
-              <>{subheader.title}</>
-              {/*<small></small>*/}
-            </h5>
+        <header className='row mx-0 justify-content-center justify-content-md-between align-items-center w-100'>
+          <div className='font-weight-bolder h5 text-dark-65 mb-5 mb-md-0'>
+            Road to Success in Presentation
           </div>
-
-          <BreadCrumbs items={subheader.breadcrumbs} />
-        </div>
-
-        {/* Toolbar */}
-        <div className='d-flex align-items-center'>
-          <a
-            href='#'
-            className='btn btn-light btn-sm font-weight-bold'
-            id='kt_dashboard_daterangepicker'
-            data-toggle='tooltip'
-            title='Select dashboard daterange'
-            data-placement='left'
-          >
-            <span
-              className='text-muted font-weight-bold mr-2'
-              id='kt_dashboard_daterangepicker_title'
+          <div>
+            <button
+              type='button'
+              className='btn btn-bg-white btn-hover-bg-success p-2 mx-2 text-dark-25 text-hover-white'
             >
-              Today
-            </span>
-            <span
-              className='text-primary font-weight-bold'
-              id='kt_dashboard_daterangepicker_date'
+              <i className='fa fa-file-alt pr-0'></i>
+            </button>
+            <button
+              type='button'
+              className='btn btn-bg-white btn-hover-bg-success p-2 mx-2 text-dark-25 text-hover-white'
             >
-              Aug 16
-            </span>
-          </a>
-          <QuickActions />
-        </div>
+              <i className='fa fa-shield-virus pr-0'></i>
+            </button>
+            <button
+              type='button'
+              className='btn btn-bg-white btn-hover-bg-success p-2 mx-2 text-dark-25 text-hover-white'
+            >
+              <i className='fa fa-comments pr-0'></i>
+            </button>
+            <button
+              type='button'
+              className='btn btn-bg-white btn-hover-bg-success p-2 mx-2 text-dark-25 text-hover-white'
+            >
+              <i className='fa fa-bell pr-0'></i>
+            </button>
+          </div>
+        </header>
       </div>
     </div>
   );

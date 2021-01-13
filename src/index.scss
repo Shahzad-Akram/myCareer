@@ -42,6 +42,10 @@
 //   padding: 0rem 1.5rem 1.75rem !important;
 // }
 
+html {
+  scroll-behavior: smooth;
+}
+
 .example-highlight > pre {
   background: none transparent !important;
   margin: 0 !important;
@@ -174,11 +178,24 @@ a:hover {
   transform: scale(0.95);
 }
 
+.cursor-pointer {
+  cursor: pointer;
+}
+
 // Side Bar
+
+.header-mobile-fixed .header-mobile {
+  z-index: 98;
+}
+
+.header-fixed.subheader-fixed .subheader {
+  top: 0 !important;
+  z-index: 99;
+}
 
 .aside {
   padding: 0 20px !important;
-  margin-top: 56px;
+  z-index: 99999999999999;
 }
 
 .aside-minimize:not(.aside-minimize-hover) .aside {
@@ -234,6 +251,12 @@ a:hover {
 }
 
 // ===
+
+.review-report-bg {
+  background-image: url(./assets/images/background/bg-hero-3.svg);
+  background-size: cover;
+  background-position: bottom;
+}
 
 .Section-1 {
   background-image: url(./assets/images/background/bg-hero.svg);
