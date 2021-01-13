@@ -51,7 +51,7 @@ export const RecordInterview = () => {
             <Col>
               <img
                 className='rounded-lg'
-                height={600}
+                height='100%'
                 width='100%'
                 src={ImageTwo}
                 alt='pick'
@@ -64,7 +64,7 @@ export const RecordInterview = () => {
               />
             </Col>
             <Col lg={4} className='d-flex flex-column'>
-              <h5 className='font-weight-bold mb-8'>
+              <h5 className='font-weight-bold mt-5 mb-8'>
                 Refine your skill by more practice
               </h5>
               <div className='flex-grow-1 bg-white rounded-lg d-flex flex-column'>
