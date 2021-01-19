@@ -34,37 +34,6 @@ export const RecordInterview = () => {
         paddingTop: 70,
       }}
     >
-      <header className='row mx-0 justify-content-center justify-content-md-between align-items-center mb-10'>
-        <div className='font-weight-bolder h5 text-dark-65 mb-5 mb-md-0'>
-          Road to Success in Presentation
-        </div>
-        <div>
-          <button
-            type='button'
-            className='btn btn-bg-white btn-hover-bg-success p-2 mx-2 text-dark-25 text-hover-white'
-          >
-            <i className='fa fa-file-alt pr-0'></i>
-          </button>
-          <button
-            type='button'
-            className='btn btn-bg-white btn-hover-bg-success p-2 mx-2 text-dark-25 text-hover-white'
-          >
-            <i className='fa fa-shield-virus pr-0'></i>
-          </button>
-          <button
-            type='button'
-            className='btn btn-bg-white btn-hover-bg-success p-2 mx-2 text-dark-25 text-hover-white'
-          >
-            <i className='fa fa-comments pr-0'></i>
-          </button>
-          <button
-            type='button'
-            className='btn btn-bg-white btn-hover-bg-success p-2 mx-2 text-dark-25 text-hover-white'
-          >
-            <i className='fa fa-bell pr-0'></i>
-          </button>
-        </div>
-      </header>
       <div>
         <Stepper
           className='rounded-lg flex-column align-items-center flex-lg-row'
@@ -82,7 +51,7 @@ export const RecordInterview = () => {
             <Col>
               <img
                 className='rounded-lg'
-                height={600}
+                height='100%'
                 width='100%'
                 src={ImageTwo}
                 alt='pick'
@@ -95,7 +64,7 @@ export const RecordInterview = () => {
               />
             </Col>
             <Col lg={4} className='d-flex flex-column'>
-              <h5 className='font-weight-bold mb-8'>
+              <h5 className='font-weight-bold mt-5 mb-8'>
                 Refine your skill by more practice
               </h5>
               <div className='flex-grow-1 bg-white rounded-lg d-flex flex-column'>
