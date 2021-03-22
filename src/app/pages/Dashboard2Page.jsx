@@ -1,42 +1,43 @@
-import React, { useState } from 'react';
-import Stepper from '@material-ui/core/Stepper';
-import Step from '@material-ui/core/Step';
-import StepLabel from '@material-ui/core/StepLabel';
-import Button from '@material-ui/core/Button';
-import Typography from '@material-ui/core/Typography';
-import MobileStepper from '@material-ui/core/MobileStepper';
-import { Modal, Row } from 'react-bootstrap';
+import React, { useState } from "react";
+import Stepper from "@material-ui/core/Stepper";
+import Step from "@material-ui/core/Step";
+import StepLabel from "@material-ui/core/StepLabel";
+import Button from "@material-ui/core/Button";
+import Typography from "@material-ui/core/Typography";
+import MobileStepper from "@material-ui/core/MobileStepper";
+import { Modal, Row } from "react-bootstrap";
 
 // Components
-import Question1 from '../CustomComponents/Question1';
-import ResultFree from '../CustomComponents/resultFree';
-import { Col } from 'react-bootstrap';
-import { FormControlLabel, TextField, Checkbox } from '@material-ui/core';
+import Question1 from "../CustomComponents/Question1";
+import ResultFree from "../CustomComponents/resultFree";
+import { Col } from "react-bootstrap";
+import { FormControlLabel, TextField, Checkbox } from "@material-ui/core";
+import axios from "axios";
 
 function getSteps() {
-  return ['1', '2', '3', '4', '5', '6', '7'];
+  return ["1", "2", "3", "4", "5", "6", "7"];
 }
 
 function getStepsOne() {
-  return ['Step 1', 'Step 2', 'Step 3', 'Step 4'];
+  return ["Step 1", "Step 2", "Step 3", "Step 4"];
 }
 
 const StepperTwo = ({ activeStepOne, onClick, onBack }) => {
   return (
     <>
       <MobileStepper
-        className='justify-content-center justify-content-md-start'
-        variant='progress'
+        className="justify-content-center justify-content-md-start"
+        variant="progress"
         steps={7}
-        position='static'
+        position="static"
         activeStep={activeStepOne}
         backButton={
-          <div className='d-flex align-items-center text-black-50 mr-3'>
-            <span className='p-0' onClick={onBack}>
+          <div className="d-flex align-items-center text-black-50 mr-3">
+            <span className="p-0" onClick={onBack}>
               1
             </span>
             <span>/</span>
-            <span className='p-0' onClick={onClick}>
+            <span className="p-0" onClick={onClick}>
               7
             </span>
           </div>
@@ -49,21 +50,21 @@ const StepperTwo = ({ activeStepOne, onClick, onBack }) => {
 function getStepContent(stepIndex) {
   switch (stepIndex) {
     case 0:
-      return <Question1 title=' Question 1: Lorem ipsum dolor site amet' />;
+      return <Question1 title=" Question 1: Lorem ipsum dolor site amet" />;
     case 1:
-      return <Question1 title=' Question 2: Lorem ipsum dolor site amet' />;
+      return <Question1 title=" Question 2: Lorem ipsum dolor site amet" />;
     case 2:
-      return <Question1 title=' Question 3: Lorem ipsum dolor site amet' />;
+      return <Question1 title=" Question 3: Lorem ipsum dolor site amet" />;
     case 3:
-      return <Question1 title=' Question 4: Lorem ipsum dolor site amet' />;
+      return <Question1 title=" Question 4: Lorem ipsum dolor site amet" />;
     case 4:
-      return <Question1 title=' Question 5: Lorem ipsum dolor site amet' />;
+      return <Question1 title=" Question 5: Lorem ipsum dolor site amet" />;
     case 5:
-      return <Question1 title=' Question 6: Lorem ipsum dolor site amet' />;
+      return <Question1 title=" Question 6: Lorem ipsum dolor site amet" />;
     case 6:
-      return <Question1 title=' Question 7: Lorem ipsum dolor site amet' />;
+      return <Question1 title=" Question 7: Lorem ipsum dolor site amet" />;
     default:
-      return 'Uknown stepIndex';
+      return "Uknown stepIndex";
   }
 }
 
@@ -85,7 +86,25 @@ export const Dashboard2Page = () => {
   const stepsOne = getStepsOne();
 
   function handleNext() {
-    setActiveStep((prevActiveStep) => prevActiveStep + 1);
+    // setActiveStep((prevActiveStep) => prevActiveStep + 1);
+    const data = {
+      qEmail: "fdgghgr@gmail.com",
+      qScore: 45,
+    };
+
+    axios
+      .post(
+        "https://1bw6r8j7ih.execute-api.us-east-2.amazonaws.com/presentation/add",
+        data,
+        {
+          headers: {
+            "Content-Type": "application/json",
+            "Access-Control-Allow-Headers": "*",
+          },
+        }
+      )
+      .then((res) => console.log(res))
+      .catch((err) => console.log(err));
   }
 
   function handleBack() {
@@ -98,29 +117,29 @@ export const Dashboard2Page = () => {
 
   return (
     <section
-      className='container pl-lg-29'
+      className="container pl-lg-29"
       style={{
         paddingTop: 70,
       }}
     >
       <div>
         <Stepper
-          className='rounded-lg flex-column align-items-center flex-lg-row'
+          className="rounded-lg flex-column align-items-center flex-lg-row"
           activeStep={activeStepOne}
           alternativeLabel
         >
           {stepsOne.map((label) => (
-            <Step key={label} className='mb-10 mb-lg-0'>
+            <Step key={label} className="mb-10 mb-lg-0">
               <StepLabel>{label}</StepLabel>
-              <div className='small mt-4 text-center'>
+              <div className="small mt-4 text-center">
                 Lorem ipsum dolor sit amet consectetur adipisicing elit.
                 Sapiente sunt a nesciunt aspernatur nostrum eveniet.
               </div>
-              <div className='text-center mt-4'>
-                <span className='badge badge-light'>0/4 Completed</span>
+              <div className="text-center mt-4">
+                <span className="badge badge-light">0/4 Completed</span>
               </div>
-              <div className='text-center mt-4'>
-                <span className='badge badge-danger'>Paid</span>
+              <div className="text-center mt-4">
+                <span className="badge badge-danger">Paid</span>
               </div>
             </Step>
           ))}
@@ -128,39 +147,39 @@ export const Dashboard2Page = () => {
         <div>
           {activeStep === steps.length ? (
             <div>
-              <Modal centered size='xl' show={show} onHide={handleClose}>
-                <Modal.Body className='Section-1 rounded-lg'>
-                  <div className='mb-5 text-right'>
+              <Modal centered size="xl" show={show} onHide={handleClose}>
+                <Modal.Body className="Section-1 rounded-lg">
+                  <div className="mb-5 text-right">
                     <button
-                      type='button'
+                      type="button"
                       onClick={handleClose}
-                      className='btn p-0'
+                      className="btn p-0"
                     >
-                      <i className='fa fa-times'></i>
+                      <i className="fa fa-times"></i>
                     </button>
                   </div>
-                  <Row className='justify-content-around align-items-center'>
+                  <Row className="justify-content-around align-items-center">
                     <Col md={5}>
-                      <h1 className='font-weight-bolder text-uppercase mb-4'>
+                      <h1 className="font-weight-bolder text-uppercase mb-4">
                         WelCome and what you will get
                       </h1>
-                      <div className='mb-4'>
+                      <div className="mb-4">
                         Lorem ipsum, dolor sit amet consectetur adipisicing
                         elit. Aspernatur iste ea totam id repudiandae omnis?
                       </div>
-                      <p className='mb-4 text-black-50'>
+                      <p className="mb-4 text-black-50">
                         Lorem ipsum dolor sit amet, consectetur adipisicing
                         elit. Minima facilis impedit nostrum odit, aliquam nam
                         voluptas mollitia veniam debitis obcaecati numquam ad
                         laboriosam, nesciunt ut. Cum quia quasi voluptas sequi!
                       </p>
-                      <p className='mb-4 text-black-50'>
+                      <p className="mb-4 text-black-50">
                         Lorem ipsum dolor sit amet, consectetur adipisicing
                         elit. Minima facilis impedit nostrum odit, aliquam nam
                         voluptas mollitia veniam debitis obcaecati numquam ad
                         laboriosam, nesciunt ut. Cum quia quasi voluptas sequi!
                       </p>
-                      <p className='text-black-50'>
+                      <p className="text-black-50">
                         Lorem ipsum dolor sit amet, consectetur adipisicing
                         elit. Minima facilis impedit nostrum odit, aliquam nam
                         voluptas mollitia veniam debitis obcaecati numquam ad
@@ -169,29 +188,29 @@ export const Dashboard2Page = () => {
                     </Col>
                     <Col md={5} lg={4}>
                       <form>
-                        <div className='mb-3'>
+                        <div className="mb-3">
                           <TextField
-                            className='w-100'
-                            type='email'
-                            label='Email'
-                            variant='filled'
+                            className="w-100"
+                            type="email"
+                            label="Email"
+                            variant="filled"
                           />
                         </div>
-                        <div className='mb-3'>
+                        <div className="mb-3">
                           <FormControlLabel
                             control={
                               <Checkbox
                                 checked={state.checkedA}
                                 onChange={handleChange}
-                                name='checkedA'
-                                color='primary'
+                                name="checkedA"
+                                color="primary"
                               />
                             }
-                            label='I agree to the terms & conditions'
+                            label="I agree to the terms & conditions"
                           />
                         </div>
                         <div>
-                          <button className='btn btn-primary btn-block'>
+                          <button className="btn btn-primary btn-block">
                             Sign Up
                           </button>
                         </div>
@@ -203,10 +222,10 @@ export const Dashboard2Page = () => {
               <ResultFree />
             </div>
           ) : (
-            <div className='bg-white p-8 rounded-lg mt-10'>
+            <div className="bg-white p-8 rounded-lg mt-10">
               <Typography>{getStepContent(activeStep)}</Typography>
-              <div className='row justify-content-between mt-8 pt-8 border-top'>
-                <div className='col-12 col-md-3'>
+              <div className="row justify-content-between mt-8 pt-8 border-top">
+                <div className="col-12 col-md-3">
                   <StepperTwo
                     activeStepOne={activeStep}
                     onClick={handleNext}
@@ -215,16 +234,16 @@ export const Dashboard2Page = () => {
                     disabled={activeStep === 0}
                   />
                 </div>
-                <div className='col-12 col-md-3 text-right'>
+                <div className="col-12 col-md-3 text-right">
                   <Button
-                    className='btn-primary btn-block'
-                    variant='contained'
-                    color='primary'
+                    className="btn-primary btn-block"
+                    variant="contained"
+                    color="primary"
                     onClick={handleNext}
                   >
                     {activeStepOne === steps.length - 1
-                      ? 'Finish'
-                      : 'Next Question'}
+                      ? "Finish"
+                      : "Next Question"}
                   </Button>
                 </div>
               </div>

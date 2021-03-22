@@ -41,7 +41,7 @@ export function QuickUser() {
             <div
               className="symbol-label"
               style={{
-                backgroundImage: `url(${user.pic})`,
+                backgroundImage: `https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixid=MXwxMjA3fDB8MHxzZWFyY2h8NHx8dXNlcnxlbnwwfHwwfA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60`,
               }}
             />
             <i className="symbol-badge bg-success" />
@@ -51,9 +51,9 @@ export function QuickUser() {
               href="#"
               className="font-weight-bold font-size-h5 text-dark-75 text-hover-primary"
             >
-              {user.firstname} {user.lastname}
+              Shahzad Akram
             </a>
-            <div className="text-muted mt-1">{user.occupation}</div>
+            <div className="text-muted mt-1">Developer</div>
             <div className="navi mt-2">
               <a className="navi-item cursor-pointer">
                 <span className="navi-link p-0 pb-2">
@@ -67,7 +67,7 @@ export function QuickUser() {
                     </span>
                   </span>
                   <span className="navi-text text-muted text-hover-primary">
-                    {user.email}
+                    shahzad@gmail.com
                   </span>
                 </span>
               </a>

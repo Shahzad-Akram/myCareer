@@ -5,13 +5,14 @@
  * components (e.g: `src/app/modules/Auth/pages/AuthPage`, `src/app/BasePage`).
  */
 
-import React from 'react';
-import { Redirect, Switch, Route } from 'react-router-dom';
-import { shallowEqual, useSelector } from 'react-redux';
-import { Layout } from '../_metronic/layout';
-import BasePage from './BasePage';
-import { Logout, AuthPage } from './modules/Auth';
-import ErrorsPage from './modules/ErrorsExamples/ErrorsPage';
+import React from "react";
+import { Switch, Route, useHistory, useLocation } from "react-router-dom";
+import { shallowEqual, useSelector } from "react-redux";
+import { Layout } from "../_metronic/layout";
+import BasePage from "./BasePage";
+import { Logout, AuthPage } from "./modules/Auth";
+import ErrorsPage from "./modules/ErrorsExamples/ErrorsPage";
+import { HomePage } from "./pages/HomePage";
 
 export function Routes() {
   const { isAuthorized } = useSelector(
@@ -21,29 +22,38 @@ export function Routes() {
     shallowEqual
   );
 
+  const history = useHistory();
+  const location = useLocation();
+
+  React.useEffect(() => {
+    if (!isAuthorized && !location.pathname === "/auth/login") {
+      history.push("/");
+    } else if (
+      (isAuthorized && location.pathname === "/") ||
+      (isAuthorized && location.pathname === "/auth/login")
+    ) {
+      history.push("/dashboard2");
+    }
+  }, [isAuthorized]);
+
   return (
-    <Switch>
+    <>
       {!isAuthorized ? (
-        /*Render auth page when user at `/auth` and not authorized.*/
-        <Route>
-          <AuthPage />
-        </Route>
+        <Switch>
+          <Route path="/auth/login" component={AuthPage} />
+          <Route path="/" component={HomePage} />
+          <Route path="/error" component={ErrorsPage} />
+        </Switch>
       ) : (
-        /*Otherwise redirect to root page (`/`)*/
-        <Redirect from='/auth' to='/' />
+        <Switch>
+          <Route exact path="/auth/login" component={AuthPage} />
+          <Route path="/logout" component={Logout} />
+          <Layout>
+            <BasePage />
+          </Layout>
+          <Route path="/error" component={ErrorsPage} />
+        </Switch>
       )}
-
-      <Route path='/error' component={ErrorsPage} />
-      <Route path='/logout' component={Logout} />
-
-      {!isAuthorized ? (
-        /*Redirect to `/auth` when user is not authorized*/
-        <Redirect to='/auth/login' />
-      ) : (
-        <Layout>
-          <BasePage />
-        </Layout>
-      )}
-    </Switch>
+    </>
   );
 }
