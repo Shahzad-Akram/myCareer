@@ -208,9 +208,20 @@ export const PresentationVideos = () => {
           </Stepper>
           <div>
             {activeStep === steps.length - 1 ? (
-              <div>Hello!</div>
+                <div className='bg-white mt-8 rounded-lg'>
+                <div className="row">
+                  <div className="col col-md-6">
+                  <div class="p-5"><h2 class="mb-4 font-weight-bold text-capitalize">Task is complete..</h2><div class="mb-4 font-weight-bold">The search continues with new episodes of In Search Of Fridays at 10/9c!The discovery of the Higgs Boson, or god particle, was a milestone in human knowledge that opened up new realities about the nature of our universe in this clip from Season 8</div><p class="mb-4 text-black-50">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Beatae numquam cumque, quam eum distinctio iste illo dolorum exercitationem porro eligendi provident in magni voluptate alias. Porro nulla iste exercitationem repudiandae.</p><p class="mb-4 text-black-50">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Beatae numquam cumque, quam eum distinctio iste illo dolorum exercitationem porro eligendi provident in magni voluptate alias. Porro nulla iste exercitationem repudiandae.</p><p class="mb-4 text-black-50">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Beatae numquam cumque, quam eum distinctio iste illo dolorum exercitationem porro eligendi provident in magni voluptate alias. Porro nulla iste exercitationem repudiandae.</p></div>
+                  </div>
+                  <div className="col col-md-6">
+                  <div>
+                   <img className='h-100 w-100 rounded-lg' src={require('../../../assets/learn-image-1.jpg')} alt="loading"/>
+                    </div>
+                  </div>
+                </div>
+              </div>
             ) : (
-              <div className="bg-white p-8 rounded-lg mt-10">
+              <div className="bg-white p-8 rounded-lg mt-10">  
                 {console.log(activeStep)}
                 <Typography>{getStepContent(activeStep)}</Typography>
                 <div className="row justify-content-between mt-8 pt-8 border-top">
