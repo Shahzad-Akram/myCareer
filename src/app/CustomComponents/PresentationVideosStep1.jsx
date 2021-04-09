@@ -29,9 +29,16 @@ const PresentationVideosStep1 = ({ title, data }) => {
   return (
     <>
       {data === null ? (
-        <> loading ... </>
+        <>
+           <div className='vh-100 d-flex justify-content-center align-items-center'> 
+          <div style={{height: '40vmin'}}>
+          <img className='h-100 w-100' src={require('../../assets/learn.gif')} alt="loading"/>
+          </div>
+          </div>
+        </>
       ) : (
         <>
+     
           <Row>
             <Col>
               <section className="bg-white rounded-lg p-5">
