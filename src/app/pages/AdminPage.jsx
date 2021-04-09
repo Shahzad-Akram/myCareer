@@ -8,12 +8,29 @@ import BgImageOne from "../../assets/images/background/bg-image-3.svg";
 import BgImageThree from "../../assets/images/background/bg-image-5.svg";
 import AdminStepper from "../CustomComponents/AdminStepper";
 import { useRedirect } from "../../hooks/useRedirect";
+import { useQuery } from "react-query";
+import axios from "axios";
 
 export const AdminPage = () => {
   const [show, setShow] = useState(false);
 
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
+
+  const getSubmissions = () => {
+    return axios
+      .get(
+        "https://presentation-learning-platform.herokuapp.com/api/submission/get?skip=0&limit=10"
+      )
+      .then((res) => {
+        return res.data.submission;
+      })
+      .catch((err) => console.log(err));
+  };
+
+  const { data, isLoading } = useQuery("submissions", getSubmissions);
+
+  console.log(isLoading, data);
 
   useRedirect();
 
@@ -94,13 +111,13 @@ export const AdminPage = () => {
               </Row>
             </div>
             <Row className="mx-0 mb-5">
-              <button
+              {/* <button
                 type="button"
                 className="btn btn-warning"
                 onClick={handleShow}
               >
                 <b>Show New Request (4)</b>
-              </button>
+              </button> */}
               <button type="button" className="btn ml-3 mr-auto">
                 <b>Show All</b>
               </button>
@@ -112,7 +129,11 @@ export const AdminPage = () => {
                 />
               </div>
             </Row>
-            <AdminTable className="card-stretch gutter-b" />
+            {isLoading ? (
+              <> loading ... </>
+            ) : (
+              <AdminTable data={data} className="card-stretch gutter-b" />
+            )}
           </div>
         </div>
       </section>

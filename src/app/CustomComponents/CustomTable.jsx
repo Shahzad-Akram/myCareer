@@ -11,6 +11,9 @@ import Icon12 from "../../assets/images/icons/icon-12.svg";
 import Icon13 from "../../assets/images/icons/icon-13.svg";
 import RecordModal from "./RecordModal";
 import AdminStepper from "./AdminStepper";
+import { useQuery } from "react-query";
+import axios from "axios";
+import { useSelector } from "react-redux";
 
 const records = [
   {
@@ -349,20 +352,35 @@ const recordView = [
 ];
 
 export function CustomTable({ className }) {
+  const user = useSelector((state) => state.auth.user);
   const [show, setShow] = useState(false);
   const getUserStatusClass = (status) => {
     switch (status) {
-      case "Pending":
+      case "assigned":
         return "bg-warning-o-80 text-warning";
-      case "Ready":
+      case "reviewed":
         return "bg-success-o-80 text-success";
       default:
         break;
     }
   };
 
+  const getSubmissions = () => {
+    return axios
+      .get(
+        `https://presentation-learning-platform.herokuapp.com/api/submission/get?skip=0&limit=10&reviewerId=${user._id}`
+      )
+      .then((res) => {
+        return res.data.submission;
+      })
+      .catch((err) => console.log(err));
+  };
+
+  const { data, isLoading } = useQuery("submissions", getSubmissions);
+
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
+  console.log(data);
 
   return (
     <>
@@ -399,7 +417,7 @@ export function CustomTable({ className }) {
                       <span className="text-dark-75">Submission time</span>
                     </th>
                     <th style={{ minWidth: "100px" }}>
-                      <span className="text-dark-75">Owe Rating</span>
+                      <span className="text-dark-75">Overall Rating</span>
                     </th>
 
                     <th style={{ minWidth: "100px" }}>
@@ -414,32 +432,71 @@ export function CustomTable({ className }) {
                   </tr>
                 </thead>
                 <tbody>
-                  {records.map((value) => (
-                    <tr className="cursor-pointer" onClick={handleShow}>
-                      <td className="pl-7">
-                        <span className="text-muted font-weight-bold">
-                          {value.submissionTime}
-                        </span>
-                      </td>
-                      <td>{value.OweRating}</td>
+                  {isLoading ? (
+                    <> Loading... </>
+                  ) : (
+                    data.map((value) => (
+                      <tr className="cursor-pointer" onClick={handleShow}>
+                        <td className="pl-7">
+                          <span className="text-muted font-weight-bold">
+                            {value.createdAt}
+                          </span>
+                        </td>
+                        <td>-</td>
 
-                      <td>{value.trainerRating}</td>
-                      <td>
-                        <span className="text-muted font-weight-bold text-capitalize">
-                          {value.reviewTime}
-                        </span>
-                      </td>
-                      <td className="pl-0 py-8">
-                        <span
-                          className={`badge text-capitalize' ${getUserStatusClass(
-                            value.status
-                          )}`}
-                        >
-                          {value.status}
-                        </span>
-                      </td>
-                    </tr>
-                  ))}
+                        <td>
+                          <div className="d-flex align-items-center">
+                            <div className="symbol symbol-50 symbol-light mr-4">
+                              <span className="symbol-label rounded-pill">
+                                <span className="svg-icon align-self-end">
+                                  <SVG
+                                    className="h-30px w-30px"
+                                    src={toAbsoluteUrl(
+                                      "/media/svg/avatars/001-boy.svg"
+                                    )}
+                                  />
+                                </span>
+                              </span>
+                            </div>
+                            <div>
+                              <a
+                                href="#"
+                                className="text-dark-75 font-weight-bolder text-hover-primary mb-1"
+                              >
+                                Brad Simmons
+                              </a>
+                              <div>
+                                <span>
+                                  <i className="fa fa-star text-warning small p-0 mr-2"></i>
+                                  <i className="fa fa-star text-warning small p-0 mr-2"></i>
+                                  <i className="fa fa-star text-warning small p-0 mr-2"></i>
+                                  <i className="fa fa-star text-warning small p-0 mr-2"></i>
+                                  <i className="fa fa-star text-dark-25 small p-0 mr-2"></i>
+                                </span>
+                                <span className="font-weight-bold small">
+                                  (4.0)
+                                </span>
+                              </div>
+                            </div>
+                          </div>
+                        </td>
+                        <td>
+                          <span className="text-muted font-weight-bold text-capitalize">
+                            -
+                          </span>
+                        </td>
+                        <td className="pl-0 py-8">
+                          <span
+                            className={`badge text-capitalize' ${getUserStatusClass(
+                              value.status
+                            )}`}
+                          >
+                            {value.status}
+                          </span>
+                        </td>
+                      </tr>
+                    ))
+                  )}
                 </tbody>
               </table>
             </div>

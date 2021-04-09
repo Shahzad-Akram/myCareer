@@ -29,7 +29,7 @@ export const ReadReview = () => {
   const [activeStepOne, setActiveStepOne] = useState(0);
   const stepsOne = getStepsOne();
 
-  // useRedirect();
+  useRedirect();
 
   return (
     <section

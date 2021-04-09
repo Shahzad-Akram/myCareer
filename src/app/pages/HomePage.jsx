@@ -127,7 +127,7 @@ export const HomePage = () => {
 
               <div className="mt-10">
                 <Link
-                  to="/auth/login"
+                  to="/dashboard2"
                   className="btn btn-warning text-white text-hover-white btn-lg"
                 >
                   Get Start Free

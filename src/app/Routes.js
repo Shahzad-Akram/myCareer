@@ -8,11 +8,12 @@
 import React from "react";
 import { Switch, Route, useHistory, useLocation } from "react-router-dom";
 import { shallowEqual, useSelector } from "react-redux";
-import { Layout } from "../_metronic/layout";
+import { ContentRoute, Layout } from "../_metronic/layout";
 import BasePage from "./BasePage";
 import { Logout, AuthPage } from "./modules/Auth";
 import ErrorsPage from "./modules/ErrorsExamples/ErrorsPage";
 import { HomePage } from "./pages/HomePage";
+import { Dashboard2Page } from "./pages/Dashboard2Page";
 
 export function Routes() {
   const { isAuthorized } = useSelector(
@@ -40,6 +41,11 @@ export function Routes() {
     <>
       {!isAuthorized ? (
         <Switch>
+          <ContentRoute
+            exact
+            path="/dashboard2/:id"
+            component={Dashboard2Page}
+          />
           <Route path="/auth/login" component={AuthPage} />
           <Route path="/" component={HomePage} />
           <Route path="/error" component={ErrorsPage} />

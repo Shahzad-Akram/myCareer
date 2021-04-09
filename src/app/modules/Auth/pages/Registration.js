@@ -91,7 +91,7 @@ function Registration(props) {
 
       axios
         .post(
-          "http://localhost:3000/api/user/add",
+          "https://presentation-learning-platform.herokuapp.com/api/user/add",
           data
           // {
           //   headers: {

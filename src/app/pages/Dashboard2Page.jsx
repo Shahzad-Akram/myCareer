@@ -12,6 +12,7 @@ import Question1 from "../CustomComponents/Question1";
 import ResultFree from "../CustomComponents/resultFree";
 import { Col } from "react-bootstrap";
 import { FormControlLabel, TextField, Checkbox } from "@material-ui/core";
+import { useParams } from "react-router-dom";
 import axios from "axios";
 
 function getSteps() {
@@ -69,7 +70,10 @@ function getStepContent(stepIndex) {
 }
 
 export const Dashboard2Page = () => {
+  const params = useParams();
+  console.log(params);
   const [show, setShow] = useState(true);
+  const [email, setEmail] = useState(null);
   const [state, setState] = React.useState({
     checkedA: false,
   });
@@ -86,33 +90,31 @@ export const Dashboard2Page = () => {
   const stepsOne = getStepsOne();
 
   function handleNext() {
-    // setActiveStep((prevActiveStep) => prevActiveStep + 1);
-    const data = {
-      qEmail: "fdgghgr@gmail.com",
-      qScore: 45,
-    };
-
-    axios
-      .post(
-        "https://1bw6r8j7ih.execute-api.us-east-2.amazonaws.com/presentation/add",
-        data,
-        {
-          headers: {
-            "Content-Type": "application/json",
-            "Access-Control-Allow-Headers": "*",
-          },
-        }
-      )
-      .then((res) => console.log(res))
-      .catch((err) => console.log(err));
+    setActiveStep((prevActiveStep) => prevActiveStep + 1);
   }
 
   function handleBack() {
     setActiveStep((prevActiveStep) => prevActiveStep - 1);
   }
 
-  function handleReset() {
+  function handleReset(e) {
     setActiveStep(0);
+  }
+
+  function handleSendEmail(e) {
+    e.preventDefault();
+    console.log(email);
+    const data = {
+      email: email,
+      userLevel: "intermediate",
+    };
+    axios
+      .post(
+        "https://presentation-learning-platform.herokuapp.com/api/survey/add",
+        data
+      )
+      .then((res) => console.log(res))
+      .catch((err) => console.log(err));
   }
 
   return (
@@ -145,7 +147,9 @@ export const Dashboard2Page = () => {
           ))}
         </Stepper>
         <div>
-          {activeStep === steps.length ? (
+          {params.id !== null ? (
+            <ResultFree />
+          ) : activeStep === steps.length ? (
             <div>
               <Modal centered size="xl" show={show} onHide={handleClose}>
                 <Modal.Body className="Section-1 rounded-lg">
@@ -194,6 +198,7 @@ export const Dashboard2Page = () => {
                             type="email"
                             label="Email"
                             variant="filled"
+                            onChange={(e) => setEmail(e.target.value)}
                           />
                         </div>
                         <div className="mb-3">
@@ -210,7 +215,10 @@ export const Dashboard2Page = () => {
                           />
                         </div>
                         <div>
-                          <button className="btn btn-primary btn-block">
+                          <button
+                            onClick={(e) => handleSendEmail(e)}
+                            className="btn btn-primary btn-block"
+                          >
                             Sign Up
                           </button>
                         </div>
@@ -219,7 +227,7 @@ export const Dashboard2Page = () => {
                   </Row>
                 </Modal.Body>
               </Modal>
-              <ResultFree />
+              {/* */}
             </div>
           ) : (
             <div className="bg-white p-8 rounded-lg mt-10">
@@ -241,7 +249,7 @@ export const Dashboard2Page = () => {
                     color="primary"
                     onClick={handleNext}
                   >
-                    {activeStepOne === steps.length - 1
+                    {activeStep === steps.length - 1
                       ? "Finish"
                       : "Next Question"}
                   </Button>
