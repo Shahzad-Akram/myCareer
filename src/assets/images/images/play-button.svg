@@ -4,7 +4,7 @@
 <g filter="url(#filter0_d)">
 <circle cx="65" cy="65" r="39" fill="white"/>
 </g>
-<path d="M75.2537 62.9338L61.9917 55.0861C60.0633 53.945 58.5 54.8814 58.5 57.1775V72.8224C58.5 75.1186 60.0633 76.055 61.9917 74.9138L75.2537 67.0663C77.1821 65.9252 77.1821 64.075 75.2537 62.9338Z" fill="#1BC5BD"/>
+<path d="M75.2537 62.9339L61.9917 55.0862C60.0633 53.9451 58.5 54.8815 58.5 57.1776V72.8226C58.5 75.1187 60.0633 76.0551 61.9917 74.9139L75.2537 67.0665C77.1821 65.9253 77.1821 64.0751 75.2537 62.9339Z" fill="#1BC5BD"/>
 <defs>
 <filter id="filter0_d" x="0" y="0" width="130" height="130" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
 <feFlood flood-opacity="0" result="BackgroundImageFix"/>

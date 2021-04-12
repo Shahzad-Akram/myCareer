@@ -1,12 +1,12 @@
-<svg width="178" height="54" viewBox="0 0 178 54" fill="none" xmlns="http://www.w3.org/2000/svg">
-<path d="M160 0.5V30.5" stroke="#FF8D1A"/>
-<path d="M0 0.5H160" stroke="#FF8D1A"/>
+<svg width="178" height="119" viewBox="0 0 178 119" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M160 1.45593V95.5883" stroke="#FF8D1A"/>
+<path d="M0 1.45587H160" stroke="#FF8D1A"/>
 <g filter="url(#filter0_d)">
-<circle cx="160" cy="35.5" r="5" fill="#FF8D1A"/>
-<circle cx="160" cy="35.5" r="6.5" stroke="white" stroke-width="3"/>
+<ellipse cx="160" cy="100.485" rx="5" ry="5.44118" fill="#FF8D1A"/>
+<path d="M160 107.426C163.707 107.426 166.5 104.197 166.5 100.485C166.5 96.7737 163.707 93.5441 160 93.5441C156.293 93.5441 153.5 96.7737 153.5 100.485C153.5 104.197 156.293 107.426 160 107.426Z" stroke="white" stroke-width="3"/>
 </g>
 <defs>
-<filter id="filter0_d" x="142" y="17.5" width="36" height="36" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+<filter id="filter0_d" x="142" y="82.0441" width="36" height="36.8824" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
 <feFlood flood-opacity="0" result="BackgroundImageFix"/>
 <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0"/>
 <feOffset/>

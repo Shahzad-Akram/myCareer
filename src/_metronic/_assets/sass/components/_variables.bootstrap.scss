@@ -22,7 +22,7 @@ $gray-500: 											#B5B5C3 !default;
 $gray-600: 											#7E8299 !default;
 $gray-700: 											#5E6278 !default;
 $gray-800: 											#3F4254 !default;
-$gray-900: 											#181C32 !default;
+$gray-900: 											#8950FC !default;
 
 // Dark colors
 $dark:          									$gray-900 !default;
@@ -61,10 +61,10 @@ $primary-light:    									#E1F0FF !default; // Custom variable
 $primary-inverse:  									$white !default;  // Custom variable
 
 // Secondary colors
-$secondary:     									$gray-300 !default; // Bootstrap variable
-$secondary-hover:  									darken($gray-300, 4%) !default; // Custom variable
-$secondary-light:  									$gray-200 !default; // Custom variable
-$secondary-inverse:									$dark-75 !default; // Custom variable
+$secondary:     									#8950FC !default; // Bootstrap variable
+$secondary-hover:  									#6d42c4 !default; // Custom variable
+$secondary-light:  									#8950fc84 !default; // Custom variable
+$secondary-inverse:									#8950FC !default; // Custom variable
 
 // Success colors
 $success:       									#1BC5BD !default; // Bootstrap variable
@@ -73,8 +73,8 @@ $success-light:    									#C9F7F5 !default; // Custom variable
 $success-inverse:  									$white !default; // Custom variable
 
 // Inco colors
-$info:         		 								#8950FC !default; // Bootstrap variable
-$info-hover:   		 								#7337EE !default; // Custom variable
+$info:         		 								#93C01F !default; // Bootstrap variable
+$info-hover:   		 								#b4eb2b !default; // Custom variable
 $info-light:   		 								#EEE5FF !default; // Custom variable
 $info-inverse: 		 								$white !default; // Custom variable
 
