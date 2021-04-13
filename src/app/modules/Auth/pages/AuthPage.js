@@ -5,6 +5,7 @@ import { ContentRoute } from '../../../../_metronic/layout';
 import Login from './Login';
 import Registration from './Registration';
 import ForgotPassword from './ForgotPassword';
+import ReactPlayer from 'react-player';
 import '../../../../_metronic/_assets/sass/pages/login/classic/login-1.scss';
 
 // images
@@ -13,26 +14,19 @@ import videoOne from '../../../../assets/images/images/videoOne.svg';
 import IconOne from '../../../../assets/images/icons/icon-1.svg';
 import IconTwo from '../../../../assets/images/icons/icon-2.svg';
 import IconThree from '../../../../assets/images/icons/icon-3.svg';
+import {ReactComponent as IconFour} from '../../../../assets/images/icons/icon-14.svg';
+import ImagePlay from '../../../../assets/images/images/play-button.svg';
+import { SvgBox } from '../../../../assets/SvgBox';
 
-const VideoWorkaround = ({ src }) => (
-  <div
-    className='mx-auto bg-white p-2 rounded-xl d-flex'
-    dangerouslySetInnerHTML={{
-      __html: `
-      <video
-        controls
-        autoplay
-        playsinline
-        src="${src}"
-        class='video h-100 w-100 rounded-lg'
-        type='video/mp4'
-      />
-    `,
-    }}
-  />
-);
+
 
 export function AuthPage() {
+
+  const VIDEOS = {
+    cat:
+      'https://s3.amazonaws.com/codecademy-content/courses/React/react_video-cute.mp4', 
+  };
+
   return (
     <>
       <div className='d-flex flex-column flex-root'>
@@ -43,7 +37,7 @@ export function AuthPage() {
         >
           {/*begin::Aside*/}
           <div
-            className='login-aside d-flex flex-row-auto bgi-size-cover bgi-no-repeat p-10 p-lg-10'
+            className='login-aside d-flex flex-row-auto bgi-size-cover bgi-no-repeat p-4 p-md-10 p-lg-5 p-xl-10'
             style={{
               backgroundImage: `url(${BgOne})`,
             }}
@@ -52,62 +46,73 @@ export function AuthPage() {
             <div className='d-flex flex-row-fluid flex-column justify-content-between'>
               {/* start:: Aside header */}
               <div className='mb-15 mb-lg-0'>
-                <div className='text-center col-9 px-0 bg-white rounded-lg mx-auto position-relative'>
-                  <VideoWorkaround src='https://www.radiantmediaplayer.com/media/big-buck-bunny-360p.mp4' />
-                  {/* <span className='pos-center'>
-                    <img
-                      height='100%'
-                      width='100%'
-                      src={videoOne}
-                      alt='video'
-                    />
-                  </span> */}
+                <div className='text-center position-relative col-md-9 px-0 h-300px bg-white rounded-xl shadow d-flex align-items-center justify-content-center mx-auto'>
+                  <ReactPlayer
+                     url={VIDEOS.cat}
+                    width='98%'
+                    height='96%'
+                    controls
+                    playing
+                    playIcon={
+                      <button type='button' className='btn p-0'>
+                        <img
+                          className='h-80px'
+                          src={ImagePlay}
+                          alt='Video Button'
+                        />
+                      </button>
+                    }
+                    light={videoOne}
+                  />
                 </div>
               </div>
               {/* end:: Aside header */}
 
               {/* start:: Aside content */}
               <div className='flex-column-fluid d-flex flex-column justify-content-center text-white mt-10'>
-                <div className='row mx-0 mb-5 flex-column flex-lg-row align-items-center align-items-lg-start justify-content-center'>
+                <div className='row mx-0 mb-5 flex-column flex-lg-row align-items-center  justify-content-center'>
                   <span className='mb-3 mb-lg-0 w-60px h-60px d-flex align-items-center justify-content-center border border-2 border-white rounded-circle'>
                     <i className='fa-3x text-white'>
                       <img src={IconOne} alt='icon' />
                     </i>
                   </span>
                   <span className='col-lg-8 mr-3 text-center text-lg-left'>
-                    <h6 className='mb-2'>Feature #1</h6>
-                    <p className='font-weight-lighter opacity-80'>
-                      The ultimate Bootstrap & React 16 admin theme framework
-                      for next generation web apps.
-                    </p>
+                    <h6 className='mb-2'>Mock Interview Practice</h6>
                   </span>
                 </div>
-                <div className='row mx-0 mb-5 flex-column flex-lg-row align-items-center align-items-lg-start justify-content-center'>
+                <div className='row mx-0 mb-5 flex-column flex-lg-row align-items-center  justify-content-center'>
                   <span className='mb-3 mb-lg-0 w-60px h-60px d-flex align-items-center justify-content-center border border-2 border-white rounded-circle'>
                     <i className='fa-3x text-white'>
                       <img src={IconTwo} alt='icon' />
                     </i>
                   </span>
                   <span className='col-lg-8 mr-3 text-center text-lg-left'>
-                    <h6 className='mb-2'>Feature #1</h6>
-                    <p className='font-weight-lighter opacity-80'>
-                      The ultimate Bootstrap & React 16 admin theme framework
-                      for next generation web apps.
-                    </p>
+                    <h6 className='mb-2'>Review By Professional Evaluators</h6>
                   </span>
                 </div>
-                <div className='row mx-0 mb-5 flex-column flex-lg-row align-items-center align-items-lg-start justify-content-center'>
+                <div className='row mx-0 mb-5 flex-column flex-lg-row align-items-center  justify-content-center'>
                   <span className='mb-3 mb-lg-0 w-60px h-60px d-flex align-items-center justify-content-center border border-2 border-white rounded-circle'>
                     <i className='fa-3x text-white'>
                       <img src={IconThree} alt='icon' />
                     </i>
                   </span>
                   <span className='col-lg-8 mr-3 text-center text-lg-left'>
-                    <h6 className='mb-2'>Feature #1</h6>
-                    <p className='font-weight-lighter opacity-80'>
-                      The ultimate Bootstrap & React 16 admin theme framework
-                      for next generation web apps.
-                    </p>
+                    <h6 className='mb-2'>
+                      Coaching Video Series: Proven Techniques & Tips for
+                      Admissions Interview
+                    </h6>
+                  </span>
+                </div>
+                <div className='row mx-0 mb-5 flex-column flex-lg-row align-items-center  justify-content-center'>
+                  <span className='mb-3 mb-lg-0 w-60px h-60px d-flex align-items-center justify-content-center border border-2 border-white rounded-circle'>
+                     <SvgBox size='100px' className='text-white'>
+                       <IconFour/>
+                     </SvgBox>
+                  </span>
+                  <span className='col-lg-8 mr-3 text-center text-lg-left'>
+                    <h6 className='mb-2'>
+                    CAPS™ Personal Strengths Assessment
+                    </h6>
                   </span>
                 </div>
               </div>

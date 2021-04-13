@@ -128,13 +128,13 @@ function Login(props) {
       <div className="text-center d-flex justify-content-around">
         <NavLink
           to="/auth/login"
-          className="btn text-primary btn-hover-bg-white btn-bg-secondary font-size-h6 w-50 rounded-right-0"
+          className="btn text-primary btn-hover-bg-white font-size-h6 w-50 rounded-right-0"
         >
           Login
         </NavLink>
         <NavLink
           to="/auth/registration"
-          className="btn text-primary btn-hover-bg-white btn-bg-secondary font-size-h6 w-50 rounded-left-0"
+          className="btn text-primary btn-hover-bg-white font-size-h6 w-50 rounded-left-0"
         >
           Sign up
         </NavLink>

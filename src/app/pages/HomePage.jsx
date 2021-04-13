@@ -124,19 +124,43 @@ const OurTeam = [
 
 export const HomePage = () => {
   const VIDEOS = {
-    deer:
-      'https://s3.amazonaws.com/codecademy-content/courses/React/react_video-fast.mp4',
-    snail:
-      'https://s3.amazonaws.com/codecademy-content/courses/React/react_video-slow.mp4',
     cat:
-      'https://s3.amazonaws.com/codecademy-content/courses/React/react_video-cute.mp4',
-    spider:
-      'https://s3.amazonaws.com/codecademy-content/courses/React/react_video-eek.mp4',
+      'https://s3.amazonaws.com/codecademy-content/courses/React/react_video-cute.mp4', 
   };
 
   return (
     <>
-      <section id='Section-1' className='Section-1 py-30'>
+    <header className='bg-white fixed-top'>
+      <div className='container'>
+      <div className='row mx-0 align-items-center py-3'>
+        <div className='mr-5'>
+         <a href='#Section-1'>
+         <img className='h-60px' src={Logo} alt="Logo"/>
+         </a>
+        </div>
+        <div className='d-none d-lg-block'>
+        <ul className='nav'>
+    
+    <li className='nav-item mx-3'><a className='text-body text-hover-primary font-weight-bold' href='#Section-2'>Why CareeFit Design </a></li>
+    <li className='nav-item mx-3'><a className='text-body text-hover-primary font-weight-bold' href='#Section-3'>Platform Features</a></li>
+    <li className='nav-item mx-3'><a className='text-body text-hover-primary font-weight-bold' href='#Section-4'>Choose Your Plan</a></li>
+    <li className='nav-item mx-3'><a className='text-body text-hover-primary font-weight-bold' href='#Section-5'>Contact</a></li>
+   
+  </ul>
+        </div>
+        <div className='d-flex align-items-baseline ml-auto'>
+          <div>
+           <Link to='/auth/login' className='text-capitalize text-warning text-hover-white bg-hover-warning border border-warning h-35px d-flex align-items-center px-7 h5 mb-0 mx-1'>
+             Login
+             </Link>
+           <div className='mt-3 text-center'>or <Link className='text-uppercase text-warning'>SIGNUP</Link></div>
+          </div>
+          <Link className='text-capitalize text-white text-hover-white bg-warning border border-warning h-35px d-flex align-items-center px-7 h5 mb-0 mx-1'>Get Start Free</Link>
+        </div>
+      </div>
+      </div>
+    </header>
+      <section id='Section-1' className='Section-1 pt-md-48 mt-xl-20 pt-30 pb-30'>
         <Container fixed className='h-100'>
           <Row className='h-100 mt-5 justify-content-between'>
             <Col xl={5} className='d-flex flex-column mt-4 bg-white'>
@@ -248,7 +272,7 @@ export const HomePage = () => {
         </div>
         
       </section>
-      <section id='Section-3' className='Section-3 bg-white-o-100 py-25'>
+      <section id='Section-2' className='Section-3 bg-white-o-100 py-25'>
         <Container>
           <div className='text-center mb-24'>
             <div className='mb-4 d-flex align-items-baseline justify-content-center'>
@@ -483,7 +507,7 @@ export const HomePage = () => {
           </Carousel>
         </Container>
       </section> */}
-      <section id='Section-4' className='Section-4 py-25'>
+      <section id='Section-3' className='Section-4 py-25'>
         <Container>
           <div className='text-center mb-lg-30'>
             <h1 className='display-4 text-uppercase font-weight-boldest'>
@@ -621,7 +645,7 @@ export const HomePage = () => {
           </Row>
         </Container>
       </section>
-      <section id='Section-5' className='Section-5 bg-white py-25'>
+      <section  className='Section-5 bg-white py-25'>
         <Container>
         <div className='text-center mb-20'>
             <div className='mb-4 row mx-0 align-items-baseline justify-content-center'>
@@ -660,12 +684,12 @@ export const HomePage = () => {
           </Row>
         </Container>
       </section>
-      <section id='Section-6' className='Section-6 py-25'>
+      <section id='Section-4' className='Section-6 py-25'>
         <Container>
          <PlanSection/>
         </Container>
       </section>
-      <section id='Section-7' className='Section-7 py-25'>
+      <section id='Section-5' className='Section-7 py-25'>
         <Container>
           <Row className='justify-content-between'>
             <Col md={6} lg={7}>

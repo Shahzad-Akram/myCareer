@@ -12,7 +12,7 @@ const PlanSection = () => {
 
 const dataArr = [
     {iconColOne:<IconOne/>, 
-        boxClassNameColOne: 'bg-white py-2 px-4',
+        boxClassNameColOne: 'bg-white',
         boxClassNameColTwo: 'bg-white',
         boxClassNameColThree: 'bg-white',
         boxClassNameColFour: 'bg-white',  
@@ -21,7 +21,7 @@ const dataArr = [
      Development Assessment:`, 
      titleClassNameColOne: 'font-weight-bold text-info pre-line',},
      {
-        boxClassNameColOne: 'bg-light py-3 px-4',titleColOne: 'CAPS™ Asssessment Premium Report',
+        boxClassNameColOne: 'bg-light',titleColOne: 'CAPS™ Asssessment Premium Report',
         boxClassNameColTwo: 'bg-light',
         boxClassNameColThree: 'bg-light',
         boxClassNameColFour: 'bg-light', 
@@ -30,7 +30,7 @@ const dataArr = [
         itemColFour: <span className='text-primary h2 mb-0 font-weight-bolder'>&#x2713;</span>,
       },
       {
-        boxClassNameColOne: 'bg-white py-3 px-4',titleColOne: 'CAPS™ Videos',
+        boxClassNameColOne: 'bg-white',titleColOne: 'CAPS™ Videos',
         boxClassNameColTwo: 'bg-white',
         boxClassNameColThree: 'bg-white',
         boxClassNameColFour: 'bg-white',  
@@ -39,7 +39,7 @@ const dataArr = [
         itemColFour: <span className='text-primary h2 mb-0 font-weight-bolder'>&#x2713;</span>,
       },
       {iconColOne:<IconTwo/>, 
-        boxClassNameColOne: 'bg-white py-2 px-4',
+        boxClassNameColOne: 'bg-white',
         boxClassNameColTwo: 'bg-white',
         boxClassNameColThree: 'bg-white',
         boxClassNameColFour: 'bg-white',  
@@ -48,7 +48,7 @@ const dataArr = [
     Universities Interview:`, 
      titleClassNameColOne: 'font-weight-bold text-info pre-line',},
      {
-        boxClassNameColOne: 'bg-light py-3 px-4',titleColOne: 'Self-Awareness & Personal Strengths',
+        boxClassNameColOne: 'bg-light',titleColOne: 'Self-Awareness & Personal Strengths',
         boxClassNameColTwo: 'bg-light',
         boxClassNameColThree: 'bg-light',
         boxClassNameColFour: 'bg-light',  
@@ -57,7 +57,7 @@ const dataArr = [
         itemColFour: '3 Questions',
       }, 
       {
-        boxClassNameColOne: 'bg-white py-3 px-4',titleColOne: 'Core Values & Goal Setting',
+        boxClassNameColOne: 'bg-white',titleColOne: 'Core Values & Goal Setting',
                 boxClassNameColTwo: 'bg-white',
         boxClassNameColThree: 'bg-white',
         boxClassNameColFour: 'bg-white',   
@@ -66,7 +66,7 @@ const dataArr = [
         itemColFour: '7 Questions',
       },
       {
-        boxClassNameColOne: 'bg-light py-3 px-4',titleColOne: 'Others Common Interview Questions',
+        boxClassNameColOne: 'bg-light',titleColOne: 'Others Common Interview Questions',
         boxClassNameColTwo: 'bg-light',
         boxClassNameColThree: 'bg-light',
         boxClassNameColFour: 'bg-light',  
@@ -75,7 +75,7 @@ const dataArr = [
         itemColFour: '5 Questions',
       },   
       {
-        boxClassNameColOne: 'bg-white py-3 px-4',titleColOne: 'Relating to Group Interview Questions',
+        boxClassNameColOne: 'bg-white',titleColOne: 'Relating to Group Interview Questions',
                 boxClassNameColTwo: 'bg-white',
         boxClassNameColThree: 'bg-white',
         boxClassNameColFour: 'bg-white',   
@@ -84,7 +84,7 @@ const dataArr = [
         itemColFour: <span className='text-primary h2 mb-0 font-weight-bolder'>&#x2713;</span>,
       },
       {
-        boxClassNameColOne: 'bg-light py-3 px-4',titleColOne: 'Relating to Overseas Study Questions',
+        boxClassNameColOne: 'bg-light',titleColOne: 'Relating to Overseas Study Questions',
         boxClassNameColTwo: 'bg-light',
         boxClassNameColThree: 'bg-light',
         boxClassNameColFour: 'bg-light',  
@@ -93,7 +93,7 @@ const dataArr = [
         itemColFour: <span className='text-primary h2 mb-0 font-weight-bolder'>&#x2713;</span>,
       },
       {iconColOne:<IconThree/>, 
-        boxClassNameColOne: 'bg-white py-2 px-4',
+        boxClassNameColOne: 'bg-white',
                 boxClassNameColTwo: 'bg-white',
         boxClassNameColThree: 'bg-white',
         boxClassNameColFour: 'bg-white',  
@@ -101,7 +101,7 @@ const dataArr = [
     `Mock Interview + Review Report:`, 
      titleClassNameColOne: 'font-weight-bold text-info pre-line',},
      {
-        boxClassNameColOne: 'bg-light py-3 px-4',titleColOne: 'Mock Interview',
+        boxClassNameColOne: 'bg-light',titleColOne: 'Mock Interview',
         boxClassNameColTwo: 'bg-light',
         boxClassNameColThree: 'bg-light',
         boxClassNameColFour: 'bg-light',  
@@ -110,7 +110,7 @@ const dataArr = [
         itemColFour: '5 practice',
       },
       {
-        boxClassNameColOne: 'bg-white py-3 px-4',titleColOne: 'Review Report by Professional Evaluators',
+        boxClassNameColOne: 'bg-white',titleColOne: 'Review Report by Professional Evaluators',
                 boxClassNameColTwo: 'bg-white',
         boxClassNameColThree: 'bg-white',
         boxClassNameColFour: 'bg-white',   
@@ -119,7 +119,7 @@ const dataArr = [
         itemColFour: '5 practice',
       },
       {iconColOne:<IconFour/>, 
-        boxClassNameColOne: 'bg-white py-2 px-4',
+        boxClassNameColOne: 'bg-white',
                 boxClassNameColTwo: 'bg-white',
         boxClassNameColThree: 'bg-white',
         boxClassNameColFour: 'bg-white',  
@@ -127,7 +127,7 @@ const dataArr = [
     `Top-up:`, 
      titleClassNameColOne: 'font-weight-bold text-warning pre-line',},
      {
-        boxClassNameColOne: 'bg-light py-3 px-4',
+        boxClassNameColOne: 'bg-light',
         boxClassNameColTwo: 'bg-light',
         boxClassNameColThree: 'bg-light',
         boxClassNameColFour: 'bg-light', 
@@ -138,7 +138,7 @@ const dataArr = [
         itemColThree: 'HK$450 each practice',
         itemColFour: 'HK$350 each practice',
       },
-      {boxClassNameColOne: 'bg-white py-3 px-4',
+      {boxClassNameColOne: 'bg-white',
       boxClassNameColTwo: 'bg-white py-6',
         boxClassNameColThree: 'bg-white py-6',
         boxClassNameColFour: 'bg-white py-6', 
@@ -151,7 +151,7 @@ const dataArr = [
 
 const upgradeArr = [
     {iconColOne:<IconFive/>, 
-        boxClassNameColOne: 'bg-white py-2 px-4',
+        boxClassNameColOne: 'bg-white',
                 boxClassNameColTwo: 'bg-white',
         boxClassNameColThree: 'bg-white',
         boxClassNameColFour: 'bg-white',  
@@ -159,7 +159,7 @@ const upgradeArr = [
     `Upgrade`, 
      titleClassNameColOne: 'font-weight-bold text-warning pre-line',},
      {
-        boxClassNameColOne: 'bg-light py-3 px-4',titleColOne: 'to Premium Plan',
+        boxClassNameColOne: 'bg-light',titleColOne: 'to Premium Plan',
         boxClassNameColTwo: 'bg-light',
         boxClassNameColThree: 'bg-light',
         boxClassNameColFour: 'bg-light',  
@@ -168,7 +168,7 @@ const upgradeArr = [
         itemColFour: '-',
       },
       {
-        boxClassNameColOne: 'bg-white py-3 px-4',titleColOne: 'to Basic Plan',
+        boxClassNameColOne: 'bg-white',titleColOne: 'to Basic Plan',
         boxClassNameColTwo: 'bg-white',
         boxClassNameColThree: 'bg-white',
         boxClassNameColFour: 'bg-white',  
@@ -217,7 +217,7 @@ const upgradeArr = [
           {dataArr.map((data) => (
           <div className='row row-cols-1 row-cols-md-4'>
               <div className='px-1'>
-              <div className={`row mx-0 h-100 ${data.boxClassNameColOne}`}>
+              <div className={`row mx-0 h-100 py-3 px-4  ${data.boxClassNameColOne}`}>
                        <div className='col-1 px-0 mr-3'>
                            {data.iconColOne}  
                           </div>
@@ -229,17 +229,17 @@ const upgradeArr = [
                 </div>  
               </div>
               <div className='px-1'>
-              <div className={`py-2 px-4 h-100 d-flex align-items-center justify-content-center ${data.boxClassNameColTwo}`}>
+              <div className={`py-3 px-4 h-100 d-flex align-items-center justify-content-center ${data.boxClassNameColTwo}`}>
                      {data.itemColTwo}
                  </div>
               </div>
               <div className='px-1'>
-              <div className={`py-2 px-4 h-100 d-flex align-items-center justify-content-center ${data.boxClassNameColThree}`}>
+              <div className={`py-3 px-4 h-100 d-flex align-items-center justify-content-center ${data.boxClassNameColThree}`}>
                      {data.itemColThree}
                  </div>
               </div>
               <div className='px-1'>
-              <div className={`py-2 px-4 h-100 d-flex align-items-center justify-content-center ${data.boxClassNameColFour}`}>
+              <div className={`py-3 px-4 h-100 d-flex align-items-center justify-content-center ${data.boxClassNameColFour}`}>
                      {data.itemColFour}
                  </div>
               </div>
@@ -249,7 +249,7 @@ const upgradeArr = [
           {upgradeArr.map((data) => (
           <div className='row row-cols-1 row-cols-md-4'>
               <div className='px-1'>
-              <div className={`row mx-0 h-100 ${data.boxClassNameColOne}`}>
+              <div className={`row mx-0 h-100 py-3 px-4  ${data.boxClassNameColOne}`}>
                        <div className='col-1 px-0 mr-3'>
                            {data.iconColOne}  
                           </div>
@@ -261,17 +261,17 @@ const upgradeArr = [
                 </div>  
               </div>
               <div className='px-1'>
-              <div className={`py-2 px-4 h-100 d-flex align-items-center justify-content-center ${data.boxClassNameColTwo}`}>
+              <div className={`py-3 px-4 h-100 d-flex align-items-center justify-content-center ${data.boxClassNameColTwo}`}>
                      {data.itemColTwo}
                  </div>
               </div>
               <div className='px-1'>
-              <div className={`py-2 px-4 h-100 d-flex align-items-center justify-content-center ${data.boxClassNameColThree}`}>
+              <div className={`py-3 px-4 h-100 d-flex align-items-center justify-content-center ${data.boxClassNameColThree}`}>
                      {data.itemColThree}
                  </div>
               </div>
               <div className='px-1'>
-              <div className={`py-2 px-4 h-100 d-flex align-items-center justify-content-center ${data.boxClassNameColFour}`}>
+              <div className={`py-3 px-4 h-100 d-flex align-items-center justify-content-center ${data.boxClassNameColFour}`}>
                      {data.itemColFour}
                  </div>
               </div>
