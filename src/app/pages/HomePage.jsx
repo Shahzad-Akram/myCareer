@@ -1,7 +1,7 @@
 // rafc
 import React from 'react';
 import { Button, Container, TextField } from '@material-ui/core';
-import { Row, Col, Card, CardColumns, Carousel } from 'react-bootstrap';
+import { Row, Col, Card, } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import ReactPlayer from 'react-player';
 // import video from '../assets/header-muted.mp4'
@@ -18,7 +18,6 @@ import Icon7 from '../../assets/images/icons/icon-7.svg';
 import Icon8 from '../../assets/images/icons/icon-8.svg';
 import Icon9 from '../../assets/images/icons/icon-9.svg';
 import Icon10 from '../../assets/images/icons/icon-10.svg';
-import Image1 from '../../assets/images/images/image-1.svg';
 import Image2 from '../../assets/images/images/image-2.svg';
 import Image2Png from '../../assets/images/images/image-2.png';
 import videoOne from '../../assets/images/images/videoOne.svg';
@@ -31,9 +30,6 @@ import face2 from '../../assets/images/faces/face2.svg';
 import face3 from '../../assets/images/faces/face3.svg';
 import face4 from '../../assets/images/faces/face4.svg';
 import face5 from '../../assets/images/faces/face5.svg';
-import plan1 from '../../assets/images/plan/plan-1.svg';
-import plan2 from '../../assets/images/plan/plan-2.png';
-import plan3 from '../../assets/images/plan/plan-3.svg';
 import ImagePlay from '../../assets/images/images/play-button.svg';
 import { SvgBox } from '../../assets/SvgBox';
 import PlanSection from '../CustomComponents/PlanSection';
@@ -197,7 +193,7 @@ export const HomePage = () => {
               </p>
             </Col>
             <Col xl={6} className='order-first order-xl-last my-10 my-md-0'>
-              <div className='text-center position-relative h-400px bg-white rounded-xl shadow d-flex align-items-center justify-content-center'>
+              <div className='text-center position-relative h-200px h-md-250px h-lg-300px h-xl-350px h-xxl-400px bg-white rounded-xl shadow d-flex align-items-center justify-content-center'>
                 <ReactPlayer
                   url={VIDEOS.cat}
                   width='97%'
@@ -405,108 +401,6 @@ export const HomePage = () => {
           </div>
         </Container>
       </section>
-      {/* <section id='Section-3' className='Section-3 bg-white py-25'>
-        <Container>
-          <div className='text-center mb-20'>
-            <h1 className='text-uppercase font-weight-boldest'>Testimonials</h1>
-            <h6 className='text-black-50'>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit.
-            </h6>
-          </div>
-          <Carousel>
-            <Carousel.Item>
-              <Row>
-                <Col lg={6}>
-                  <Link className='play-link d-flex flex-column justify-content-center'>
-                    <img height={150} src={Image1} alt='pic' />
-                    <img
-                      height={70}
-                      src={ImagePlay}
-                      alt='play button'
-                      style={{ marginTop: '-35px' }}
-                    />
-                  </Link>
-                </Col>
-                <Col
-                  md={6}
-                  lg={5}
-                  className='mx-auto mt-10 mt-lg-0 text-center text-lg-left'
-                >
-                  <h6 className='text-primary mb-10'> 1/3</h6>
-                  <h3>Chan Tai Man</h3>
-                  <h6>2019 Form 7 Student, Successfully candidate to HKU</h6>
-                  <p>
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                    Ipsum numquam culpa nisi dolor odit nesciunt vero harum
-                    vitae sint eos minus at eveniet, quia non modi facilis
-                    explicabo! Fugit, sed.
-                  </p>
-                </Col>
-              </Row>
-            </Carousel.Item>
-            <Carousel.Item>
-              <Row>
-                <Col lg={6}>
-                  <Link className='play-link d-flex flex-column justify-content-center'>
-                    <img height={150} src={Image1} alt='pic' />
-                    <img
-                      height={70}
-                      src={ImagePlay}
-                      alt='play button'
-                      style={{ marginTop: '-35px' }}
-                    />
-                  </Link>
-                </Col>
-                <Col
-                  md={6}
-                  lg={5}
-                  className='mx-auto mt-10 mt-lg-0 text-center text-lg-left'
-                >
-                  <h6 className='text-primary mb-10'> 2/3</h6>
-                  <h3>Chan Tai Man</h3>
-                  <h6>2019 Form 7 Student, Successfully candidate to HKU</h6>
-                  <p>
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                    Ipsum numquam culpa nisi dolor odit nesciunt vero harum
-                    vitae sint eos minus at eveniet, quia non modi facilis
-                    explicabo! Fugit, sed.
-                  </p>
-                </Col>
-              </Row>
-            </Carousel.Item>
-            <Carousel.Item>
-              <Row>
-                <Col lg={6}>
-                  <Link className='play-link d-flex flex-column justify-content-center'>
-                    <img height={150} src={Image1} alt='pic' />
-                    <img
-                      height={70}
-                      src={ImagePlay}
-                      alt='play button'
-                      style={{ marginTop: '-35px' }}
-                    />
-                  </Link>
-                </Col>
-                <Col
-                  md={6}
-                  lg={5}
-                  className='mx-auto mt-10 mt-lg-0 text-center text-lg-left'
-                >
-                  <h6 className='text-primary mb-10'> 3/3</h6>
-                  <h3>Chan Tai Man</h3>
-                  <h6>2019 Form 7 Student, Successfully candidate to HKU</h6>
-                  <p>
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                    Ipsum numquam culpa nisi dolor odit nesciunt vero harum
-                    vitae sint eos minus at eveniet, quia non modi facilis
-                    explicabo! Fugit, sed.
-                  </p>
-                </Col>
-              </Row>
-            </Carousel.Item>
-          </Carousel>
-        </Container>
-      </section> */}
       <section id='Section-3' className='Section-4 py-25'>
         <Container>
           <div className='text-center mb-lg-30'>

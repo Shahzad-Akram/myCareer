@@ -130,6 +130,10 @@ video,
 }
 
 // ===
+.badge-info,
+.badge-warning {
+  color: #fff !important;
+}
 
 .btn {
   transition: all 0.3s ease;
@@ -402,6 +406,12 @@ a:hover {
   color: #9c27b0 !important;
 }
 
+@media (max-width: 1200px) { 
+  .Section-3 .play-link { 
+    width: 80%;
+  }
+}
+
 @media (max-width: 990px) {
   .aside {
     width: 250px !important;
@@ -409,5 +419,8 @@ a:hover {
 
   .MuiStepConnector-line {
     display: none !important;
+  }
+  .Section-3 .play-link { 
+    width: 100%;
   }
 }

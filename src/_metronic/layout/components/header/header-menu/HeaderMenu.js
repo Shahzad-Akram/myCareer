@@ -23,46 +23,12 @@ export function HeaderMenu({ layoutProps }) {
       <ul className={`menu-nav ${layoutProps.ulClasses}`}>
         {/*begin::1 Level*/}
         <li className={`menu-item menu-item-rel`}>
-          <NavLink className='menu-link text-capitalize' to='/home'>
+          <NavLink className='text-capitalize' to='/home'>
             <img height={70} width={70} src={Logo} alt='logo' />
           </NavLink>
         </li>
         {/*end::1 Level*/}
 
-        <li className={`menu-item menu-item-rel`}>
-          <a
-            href='#Section-1'
-            className='menu-link text-capitalize text-dark text-hover-primary'
-          >
-            Why Careefit
-          </a>
-        </li>
-
-        <li className={`menu-item menu-item-rel`}>
-          <a
-            href='#Section-5'
-            className='menu-link text-capitalize text-dark text-hover-primary'
-          >
-            Programme Feature
-          </a>
-        </li>
-
-        <li className={`menu-item menu-item-rel`}>
-          <a
-            href='#Section-6'
-            className='menu-link text-capitalize text-dark text-hover-primary'
-          >
-            Pricing
-          </a>
-        </li>
-        <li className={`menu-item menu-item-rel`}>
-          <a
-            href='#Section-7'
-            className='menu-link text-capitalize text-dark text-hover-primary'
-          >
-            About & Contact
-          </a>
-        </li>
       </ul>
       {/*end::Header Nav*/}
     </div>

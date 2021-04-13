@@ -37,7 +37,7 @@ export function AuthPage() {
         >
           {/*begin::Aside*/}
           <div
-            className='login-aside d-flex flex-row-auto bgi-size-cover bgi-no-repeat p-4 p-md-10 p-lg-5 p-xl-10'
+            className='login-aside d-none d-md-flex d-lg-none d-xl-flex flex-row-auto bgi-size-cover bgi-no-repeat p-4 p-md-10 p-lg-5 p-xl-10'
             style={{
               backgroundImage: `url(${BgOne})`,
             }}
@@ -46,7 +46,7 @@ export function AuthPage() {
             <div className='d-flex flex-row-fluid flex-column justify-content-between'>
               {/* start:: Aside header */}
               <div className='mb-15 mb-lg-0'>
-                <div className='text-center position-relative col-md-9 px-0 h-300px bg-white rounded-xl shadow d-flex align-items-center justify-content-center mx-auto'>
+                <div className='text-center position-relative col-md-9 px-0 h-200px h-md-250px h-lg-200px h-xl-270px h-xxl-300px bg-white rounded-xl shadow d-flex align-items-center justify-content-center mx-auto'>
                   <ReactPlayer
                      url={VIDEOS.cat}
                     width='98%'

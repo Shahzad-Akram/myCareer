@@ -11,6 +11,7 @@ import ImagePlay from '../../assets/images/images/play-button.svg';
 import ImageOne from '../../assets/images/images/videoOne.svg';
 import resultPicOne from '../../assets/images/results/result1.svg';
 import resultPicTwo from '../../assets/images/results/result2.svg';
+import ReactPlayer from 'react-player';
 
 const ResultFree = () => {
   const [anchorEl, setAnchorEl] = useState(null);
@@ -125,30 +126,22 @@ const ResultFree = () => {
               modi, adipisci tempora quaerat, dolorem amet perferendis officiis
               nemo sint minima? Iusto, velit!
             </p>
-            <a
-              href='https://www.youtube.com/watch?v=Q3oItpVa9fs'
-              target='_blank'
-              rel='noopener noreferrer'
-              className='play-link d-flex flex-column justify-content-center mb-3'
-            >
-              <img
-                className='rounded-lg object-cover'
-                height={200}
-                src='https://source.unsplash.com/random'
-                alt='pic'
-              />
-              <img
-                height={70}
-                src={ImagePlay}
-                alt='play button'
-                className='position-absolute'
-                style={{
-                  left: '50%',
-                  top: '43%',
-                  transform: 'translate(-50%, -50%)',
-                }}
-              />
-            </a>
+            <div className='text-center position-relative h-200px  bg-white rounded-xl shadow d-flex align-items-center justify-content-center'>
+                <ReactPlayer
+                  url='https://www.youtube.com/watch?v=oUFJJNQGwhk'
+                  width='100%'
+                  height='100%'
+                  controls
+                  playing
+                  playIcon={
+                    <button type='button' className='btn p-0'>
+                      <img className='h-80px' src={ImagePlay} alt='Video Button' />
+                    </button>
+                  }
+                  light='https://source.unsplash.com/random'
+                />
+              </div>
+        
             <div className='d-flex align-items-center mt-4'>
               <span className='mr-2'>
                 <img
@@ -202,21 +195,26 @@ const ResultFree = () => {
                       Register Now
                     </button>
                   </Col>
-                  <Col lg={6} className='order-lg-last  order-first'>
-                    <Link className='play-link d-flex flex-column justify-content-center'>
-                      <img width='90%' height={300} src={ImageOne} alt='pic' />
-                      <img
-                        height={70}
-                        src={ImagePlay}
-                        alt='play button'
-                        className='position-absolute'
-                        style={{
-                          left: '50%',
-                          top: '40%',
-                          transform: 'translate(-50%, -50%)',
-                        }}
-                      />
-                    </Link>
+                  <Col lg={6} className='order-lg-last  order-first d-flex'>
+                  <div className='text-center position-relative play-link h-200px h-md-250px h-lg-250px h-xl-300px h-xxl-300px bg-white rounded-xl shadow d-flex align-items-center justify-content-center'>
+                          <ReactPlayer
+                            url='https://www.youtube.com/watch?v=oUFJJNQGwhk'
+                            width='97%'
+                            height='95%'
+                            controls
+                            playing
+                            playIcon={
+                              <button type='button' className='btn p-0'>
+                                <img
+                                  className='h-80px'
+                                  src={ImagePlay}
+                                  alt='Video Button'
+                                />
+                              </button>
+                            }
+                            light={ImageOne}
+                          />
+                        </div>
                   </Col>
                 </Row>
               </Carousel.Item>
@@ -245,21 +243,26 @@ const ResultFree = () => {
                       Register Now
                     </button>
                   </Col>
-                  <Col lg={6} className='order-lg-last  order-first'>
-                    <Link className='play-link d-flex flex-column justify-content-center position-relative'>
-                      <img width='90%' height={300} src={ImageOne} alt='pic' />
-                      <img
-                        height={70}
-                        src={ImagePlay}
-                        alt='play button'
-                        className='position-absolute'
-                        style={{
-                          left: '50%',
-                          top: '40%',
-                          transform: 'translate(-50%, -50%)',
-                        }}
-                      />
-                    </Link>
+                  <Col lg={6} className='order-lg-last  order-first d-flex'>
+                  <div className='text-center position-relative play-link h-200px h-md-250px h-lg-250px h-xl-300px h-xxl-300px bg-white rounded-xl shadow d-flex align-items-center justify-content-center'>
+                          <ReactPlayer
+                            url='https://www.youtube.com/watch?v=oUFJJNQGwhk'
+                            width='97%'
+                            height='95%'
+                            controls
+                            playing
+                            playIcon={
+                              <button type='button' className='btn p-0'>
+                                <img
+                                  className='h-80px'
+                                  src={ImagePlay}
+                                  alt='Video Button'
+                                />
+                              </button>
+                            }
+                            light={ImageOne}
+                          />
+                        </div>
                   </Col>
                 </Row>
               </Carousel.Item>
@@ -288,21 +291,26 @@ const ResultFree = () => {
                       Register Now
                     </button>
                   </Col>
-                  <Col lg={6} className='order-lg-last  order-first'>
-                    <Link className='play-link d-flex flex-column justify-content-center'>
-                      <img width='90%' height={300} src={ImageOne} alt='pic' />
-                      <img
-                        height={70}
-                        src={ImagePlay}
-                        alt='play button'
-                        className='position-absolute'
-                        style={{
-                          left: '50%',
-                          top: '40%',
-                          transform: 'translate(-50%, -50%)',
-                        }}
-                      />
-                    </Link>
+                  <Col lg={6} className='order-lg-last  order-first d-flex'>
+                     <div className='text-center position-relative play-link h-200px h-md-250px h-lg-250px h-xl-300px h-xxl-300px bg-white rounded-xl shadow d-flex align-items-center justify-content-center'>
+                          <ReactPlayer
+                            url='https://www.youtube.com/watch?v=oUFJJNQGwhk'
+                            width='97%'
+                            height='95%'
+                            controls
+                            playing
+                            playIcon={
+                              <button type='button' className='btn p-0'>
+                                <img
+                                  className='h-80px'
+                                  src={ImagePlay}
+                                  alt='Video Button'
+                                />
+                              </button>
+                            }
+                            light={ImageOne}
+                          />
+                        </div>
                   </Col>
                 </Row>
               </Carousel.Item>

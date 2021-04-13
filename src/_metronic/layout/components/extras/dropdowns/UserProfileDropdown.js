@@ -33,13 +33,13 @@ export function UserProfileDropdown() {
         >
           <span className="text-muted font-weight-bold font-size-base d-none d-md-inline mr-1">
             Hi,
-          </span>{" "}
+          </span>
           <span className="text-dark-50 font-weight-bolder font-size-base d-none d-md-inline mr-3">
             Shahzad Akram
           </span>
           <span className="symbol symbol-35 symbol-light-success">
             <span className="symbol-label font-size-h5 font-weight-bold">
-              Shahzad
+              S
             </span>
           </span>
         </div>
@@ -74,8 +74,8 @@ export function UserProfileDropdown() {
               }}
             >
               <div className="symbol bg-white-o-15 mr-3">
-                <span className="symbol-label text-success font-weight-bold font-size-h4">
-                  Shahzad
+                <span className="symbol-label text-success font-weight-bold font-size-h4 text-capitalize">
+                  S
                 </span>
                 {/*<img alt="Pic" className="hidden" src={user.pic} />*/}
               </div>
