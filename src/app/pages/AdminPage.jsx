@@ -10,8 +10,11 @@ import AdminStepper from "../CustomComponents/AdminStepper";
 import { useRedirect } from "../../hooks/useRedirect";
 import { useQuery } from "react-query";
 import axios from "axios";
+import { Link } from "react-router-dom";
+import { AdminSettings } from "../CustomComponents/AdminSettings";
 
 export const AdminPage = () => {
+  const [showSetting, setShowSetting] = useState(true);
   const [show, setShow] = useState(false);
 
   const handleClose = () => setShow(false);
@@ -46,6 +49,19 @@ export const AdminPage = () => {
       >
         <Modal.Body className="p-0 scroll-box-auto">
           <AdminStepper handleClose={handleClose} />
+        </Modal.Body>
+      </Modal>
+
+      <Modal
+        scrollable
+        centered
+        size="lg"
+        show={showSetting}
+        onHide={() => setShowSetting(false)}
+        className="rounded-lg"
+      >
+        <Modal.Body className="p-0 scroll-box-auto">
+          <AdminSettings handleClose={() => setShowSetting(false)} />
         </Modal.Body>
       </Modal>
       <section
@@ -103,9 +119,9 @@ export const AdminPage = () => {
                     <div className="mb-1 text-white font-weight-bold h6">
                       Lead Times Setting: 3 days
                     </div>
-                    <a href="/" className="text-white">
+                    <Link onClick={() => setShowSetting(true)} className="text-white text-hover-white">
                       Change Setting &#62;
-                    </a>
+                    </Link>
                   </div>
                 </Col>
               </Row>

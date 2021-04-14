@@ -1,25 +1,10 @@
 import { Rating } from '@material-ui/lab';
 import React from 'react';
 import SVG from 'react-inlinesvg';
+import ReactPlayer from 'react-player';
 import { toAbsoluteUrl } from '../../_metronic/_helpers';
 
-const VideoWorkaround = ({ src }) => (
-  <div
-    className='mx-auto bg-primary p-2 rounded-xl d-flex'
-    dangerouslySetInnerHTML={{
-      __html: `
-        <video
-          controls
-          autoplay
-          playsinline
-          src="${src}"
-          class='video h-100 w-100 rounded-lg'
-          type='video/mp4'
-        />
-      `,
-    }}
-  />
-);
+
 
 export const AdminQuestion3 = ({ children }) => {
   return (
@@ -35,7 +20,16 @@ export const AdminQuestion3 = ({ children }) => {
 
           <section className='row mx-0'>
             <div className='w-400px mr-15'>
-              <VideoWorkaround src='https://www.radiantmediaplayer.com/media/big-buck-bunny-360p.mp4' />
+            <div className='text-center mx-auto position-relative h-200px h-md-200px w-100 bg-primary rounded-xl shadow d-flex align-items-center justify-content-center'>
+                <ReactPlayer
+                  url='https://www.youtube.com/watch?v=oUFJJNQGwhk'
+                  width='96%'
+                  height='93%'
+                  controls
+                  playing
+           
+                />
+              </div>
             </div>
             <div className='d-flex flex-column'>
               <div className='d-flex mt-8 mt-lg-0'>

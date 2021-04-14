@@ -129,6 +129,15 @@ video,
   object-fit: cover;
 }
 
+.react-date-picker__wrapper { 
+  border: unset !important;
+}
+
+iframe,
+video { 
+  border-radius: 10px;
+}
+
 // ===
 .badge-info,
 .badge-warning {

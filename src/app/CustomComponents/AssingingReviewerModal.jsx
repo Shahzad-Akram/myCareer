@@ -84,7 +84,7 @@ const ReviewerModal = (props) => {
             <>loading ... </>
           ) : (
             <>
-              <Col xs={10} md={6}>
+              <Col xs={12} md={6} className='mb-8 mb-md-0'>
                 <p>Select Reviewer</p>
                 <Select
                   options={option}
@@ -93,12 +93,12 @@ const ReviewerModal = (props) => {
                   }}
                 />
               </Col>
-              <Col xs={4} md={4}>
+              <Col xs={12} md={6} lg={4} className='mb-8 mb-md-0'>
                 <p>Select Deadline</p>
-                <DatePicker onChange={onChange} value={value} />
+                <DatePicker className='form-control py-0 d-flex align-items-center' onChange={onChange} value={value} />
               </Col>
-              <Col xs={2} md={2}>
-                <Button onClick={assignReviwer}>Assign</Button>
+              <Col xs={12} lg={2} className='d-flex align-items-end mt-5 mt-lg-0'>
+                <Button block onClick={assignReviwer}>Assign</Button>
               </Col>
             </>
           )}
