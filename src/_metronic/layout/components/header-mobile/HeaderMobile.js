@@ -54,7 +54,7 @@ export function HeaderMobile() {
             <>
               {/*begin::Header Menu Mobile Toggle*/}
               <button
-                className='btn p-0 burger-icon ml-4'
+                className='btn p-0 burger-icon ml-4 d-none'
                 id='kt_header_mobile_toggle'
               >
                 <span />
