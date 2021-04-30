@@ -11,6 +11,7 @@ import axios from "axios";
 import Logo from "../../../../assets/images/logos/logo.svg";
 import Facebook from "../../../../assets/images/brands/facebook.svg";
 import Google from "../../../../assets/images/brands/google.svg";
+import Swal from "sweetalert2";
 
 /*
   INTL (i18n) docs:
@@ -94,7 +95,15 @@ function Login(props) {
           dispatch(auth.actions.login(res.data.accessToken));
           dispatch(auth.actions.setUser(res.data.user));
         })
-        .catch((err) => console.log(err));
+        .catch((err) => {
+          disableLoading();
+          setSubmitting();
+          Swal.fire(
+            "Something Went Wrong!",
+            err.response.data.message,
+            "warning"
+          );
+        });
 
       // setTimeout(() => {
       //   login(values.email, values.password)

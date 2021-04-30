@@ -3,6 +3,7 @@ import Stepper from "@material-ui/core/Stepper";
 import Step from "@material-ui/core/Step";
 import StepLabel from "@material-ui/core/StepLabel";
 import { Button, Row, Col } from "react-bootstrap";
+import Swal from "sweetalert2";
 
 // Components
 
@@ -26,6 +27,7 @@ function getStepsOne() {
 }
 
 export const RecordInterview = () => {
+  const [loading, setLoading] = useState(false);
   const user = useSelector((state) => state.auth.user);
   const recordWebcam: RecordWebcamHook = useRecordWebcam();
 
@@ -34,6 +36,7 @@ export const RecordInterview = () => {
   });
 
   const getRecordingFileHooks = async () => {
+    setLoading(true);
     const blob = await recordWebcam.getRecording();
     const file = new File([blob], "test.mp4");
     const formdata = new FormData();
@@ -46,8 +49,18 @@ export const RecordInterview = () => {
         "https://presentation-learning-platform.herokuapp.com/api/submission/add",
         formdata
       )
-      .then((res) => console.log(res))
-      .catch((err) => console.log(err));
+      .then((res) => {
+        setLoading(false);
+        Swal.fire("Submitted Successfully!", res, "success");
+      })
+      .catch((err) => {
+        setLoading(false);
+        Swal.fire(
+          "Something Went Wrong!",
+          err.response.data.message,
+          "warning"
+        );
+      });
   };
 
   const getRecordingFileRenderProp = async (blob: Blob | undefined) => {
@@ -175,7 +188,10 @@ export const RecordInterview = () => {
                     disabled={recordWebcam.status !== CAMERA_STATUS.PREVIEW}
                     onClick={getRecordingFileHooks}
                   >
-                    Submit Recording
+                    Submit
+                    {loading && (
+                      <span className="m-3 spinner spinner-white"></span>
+                    )}
                   </Button>
                 </div>
               </div>

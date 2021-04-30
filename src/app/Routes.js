@@ -47,6 +47,8 @@ export function Routes() {
             component={Dashboard2Page}
           />
           <Route path="/auth/login" component={AuthPage} />
+          <Route path="/auth/registration" component={AuthPage} />
+          <ContentRoute path="/dashboard2" component={Dashboard2Page} />
           <Route path="/" component={HomePage} />
           <Route path="/error" component={ErrorsPage} />
         </Switch>

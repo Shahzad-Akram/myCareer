@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { useFormik } from "formik";
 import { connect } from "react-redux";
 import * as Yup from "yup";
-import { Link, NavLink } from "react-router-dom";
+import { Link, NavLink, useHistory } from "react-router-dom";
 import { injectIntl } from "react-intl";
 import * as auth from "../_redux/authRedux";
 import { register } from "../_redux/authCrud";
@@ -12,6 +12,8 @@ import Logo from "../../../../assets/images/logos/logo.svg";
 import Facebook from "../../../../assets/images/brands/facebook.svg";
 import Google from "../../../../assets/images/brands/google.svg";
 
+import Swal from "sweetalert2";
+
 const initialValues = {
   // email: "admin@demo.com",
   // parentEmail: "parent@gmail.com",
@@ -20,6 +22,7 @@ const initialValues = {
 };
 
 function Registration(props) {
+  const history = useHistory();
   const { intl } = props;
   const [loading, setLoading] = useState(false);
   const RegistrationSchema = Yup.object().shape({
@@ -104,8 +107,19 @@ function Registration(props) {
           //   },
           // }
         )
-        .then((res) => console.log(data))
-        .catch((err) => console.log(err));
+        .then((res) => {
+          Swal.fire("Success", "Now login in to the system", "success");
+          history.push("/auth/login");
+        })
+        .catch((err) => {
+          disableLoading();
+          setSubmitting();
+          Swal.fire(
+            "Something Went Wrong!",
+            err.response.data.message,
+            "warning"
+          );
+        });
     },
   });
 

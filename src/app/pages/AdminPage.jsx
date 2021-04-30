@@ -52,7 +52,7 @@ export const AdminPage = () => {
         </Modal.Body>
       </Modal>
 
-      <Modal
+      {/* <Modal
         scrollable
         centered
         size="lg"
@@ -63,7 +63,7 @@ export const AdminPage = () => {
         <Modal.Body className="p-0 scroll-box-auto">
           <AdminSettings handleClose={() => setShowSetting(false)} />
         </Modal.Body>
-      </Modal>
+      </Modal> */}
       <section
         className="container pl-lg-29"
         style={{
@@ -119,7 +119,10 @@ export const AdminPage = () => {
                     <div className="mb-1 text-white font-weight-bold h6">
                       Lead Times Setting: 3 days
                     </div>
-                    <Link onClick={() => setShowSetting(true)} className="text-white text-hover-white">
+                    <Link
+                      onClick={() => setShowSetting(true)}
+                      className="text-white text-hover-white"
+                    >
                       Change Setting &#62;
                     </Link>
                   </div>

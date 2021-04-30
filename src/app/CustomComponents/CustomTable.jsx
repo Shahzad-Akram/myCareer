@@ -14,6 +14,7 @@ import AdminStepper from "./AdminStepper";
 import { useQuery } from "react-query";
 import axios from "axios";
 import { useSelector } from "react-redux";
+import DayJS from "react-dayjs";
 
 const records = [
   {
@@ -354,6 +355,7 @@ const recordView = [
 export function CustomTable({ className }) {
   const user = useSelector((state) => state.auth.user);
   const [show, setShow] = useState(false);
+  const [selectedData, setData] = useState(null);
   const getUserStatusClass = (status) => {
     switch (status) {
       case "assigned":
@@ -380,6 +382,10 @@ export function CustomTable({ className }) {
 
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
+  const handleClick = (value) => {
+    handleShow();
+    setData(value);
+  };
   console.log(data);
 
   return (
@@ -393,7 +399,7 @@ export function CustomTable({ className }) {
         className="rounded-lg"
       >
         <Modal.Body className="p-0 scroll-box-auto">
-          <AdminStepper handleClose={handleClose} />
+          <AdminStepper handleClose={handleClose} data={selectedData} />
         </Modal.Body>
       </Modal>
       {/* <RecordModal show={show} handleClose={handleClose} /> */}
@@ -436,7 +442,10 @@ export function CustomTable({ className }) {
                     <> Loading... </>
                   ) : (
                     data.map((value) => (
-                      <tr className="cursor-pointer" onClick={handleShow}>
+                      <tr
+                        className="cursor-pointer"
+                        onClick={() => handleClick(value)}
+                      >
                         <td className="pl-7">
                           <span className="text-muted font-weight-bold">
                             {value.createdAt}
@@ -463,7 +472,7 @@ export function CustomTable({ className }) {
                                 href="#"
                                 className="text-dark-75 font-weight-bolder text-hover-primary mb-1"
                               >
-                                Brad Simmons
+                                {value.reviewerId.email}
                               </a>
                               <div>
                                 <span>
@@ -482,7 +491,7 @@ export function CustomTable({ className }) {
                         </td>
                         <td>
                           <span className="text-muted font-weight-bold text-capitalize">
-                            -
+                            <DayJS format="MM-DD-YYYY">{value.deadLine}</DayJS>
                           </span>
                         </td>
                         <td className="pl-0 py-8">
