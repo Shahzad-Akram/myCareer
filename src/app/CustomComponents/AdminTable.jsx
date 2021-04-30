@@ -381,6 +381,7 @@ export function AdminTable({ className, data }) {
         show={modalShow}
         onHide={() => setModalShow(false)}
         id={id}
+        setModalShow={setModalShow}
       />
       <div className={`card card-custom ${className}`}>
         {/* Head */}

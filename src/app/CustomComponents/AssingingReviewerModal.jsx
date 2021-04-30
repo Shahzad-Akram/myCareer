@@ -3,9 +3,11 @@ import { Row, Col, Modal, Button } from "react-bootstrap";
 import Select from "react-select";
 import axios from "axios";
 import DatePicker from "react-date-picker";
+import Swal from "sweetalert2";
 
 const ReviewerModal = (props) => {
   const [loading, setLoading] = useState(false);
+  const [postLoading, setPostLoading] = useState(false);
   const [value, onChange] = useState(new Date());
   const [option, setOption] = useState(null);
   const [selectedOptions, setSelectedOptions] = useState();
@@ -46,6 +48,7 @@ const ReviewerModal = (props) => {
   };
 
   const assignReviwer = () => {
+    setPostLoading(true);
     const body = {
       id: props.id,
       updateBody: {
@@ -59,8 +62,19 @@ const ReviewerModal = (props) => {
         "https://presentation-learning-platform.herokuapp.com/api/submission/update",
         body
       )
-      .then((res) => console.log(res))
-      .catch((err) => console.log(err));
+      .then((res) => {
+        setPostLoading(false);
+        props.setModalShow(false);
+        Swal.fire("Assigned Successfully!", res, "success");
+      })
+      .catch((err) => {
+        setPostLoading(false);
+        Swal.fire(
+          "Something Went Wrong!",
+          err.response.data.message,
+          "warning"
+        );
+      });
   };
 
   useEffect(() => {
@@ -109,6 +123,9 @@ const ReviewerModal = (props) => {
               >
                 <Button block onClick={assignReviwer}>
                   Assign
+                  {postLoading && (
+                    <span className="ml-3 spinner spinner-white"></span>
+                  )}
                 </Button>
               </Col>
             </>
